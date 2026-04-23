@@ -34,7 +34,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Skills", path: "/skills" },
-    { name: "Certifications", path: "/#certifications" },
+    { name: "Certs", path: "/certifications" },
     { name: "Projects", path: "/projects" },
     { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" },
@@ -45,19 +45,19 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className={`glass-premium rounded-[2rem] px-8 h-20 transition-all duration-500 flex items-center justify-between ${scrolled ? 'bg-background-light/90 dark:bg-background-dark/95 border-primary/20 shadow-2xl' : 'bg-transparent border-transparent'}`}>
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="size-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white group-hover:rotate-12 transition-transform">
+            <div className="size-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white group-hover:rotate-12 transition-transform shadow-lg shadow-indigo-500/20">
               <Cpu className="size-6" />
             </div>
-            <h2 className="text-xl font-black tracking-tighter">MAJID<span className="text-primary italic">.KHAN</span></h2>
+            <h2 className="text-xl font-black tracking-tighter text-secondary dark:text-white">MAJID<span className="text-primary italic">.KHAN</span></h2>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6 ml-12">
+          <nav className="hidden lg:flex items-center gap-4 ml-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`px-5 py-2 rounded-xl text-xs font-black uppercase tracking-widest transition-all hover:bg-primary/10 hover:text-primary nav-link ${
+                className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all hover:bg-primary/10 hover:text-primary nav-link ${
                   location.pathname === link.path ? "text-primary bg-primary/10 active" : "text-secondary"
                 }`}
               >
@@ -69,18 +69,18 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setIsDark(!isDark)}
-              className="size-12 rounded-2xl glass-premium flex items-center justify-center hover:bg-primary/10 transition-colors"
+              className="size-12 rounded-2xl glass-premium flex items-center justify-center hover:bg-primary/10 transition-colors border border-white/10"
             >
-              {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
+              {isDark ? <Sun className="size-5 text-yellow-400" /> : <Moon className="size-5 text-indigo-600" />}
             </button>
             
             <Link to="/contact">
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="hidden md:block bg-indigo-600 text-white px-8 h-12 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-xl shadow-indigo-500/20"
+                className="hidden xl:block bg-indigo-600 text-white px-8 h-12 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-xl shadow-indigo-500/30 hover:shadow-indigo-500/50"
               >
-                Connect
+                Hire Me
               </motion.button>
             </Link>
 
