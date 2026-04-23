@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, Code, Filter, Sparkles, Database, Layout } from "lucide-react";
+import { ExternalLink, Filter } from "lucide-react";
 
 const Projects = () => {
   const [filter, setFilter] = useState("All");
@@ -124,7 +124,6 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-10">
                    <div className="flex gap-4">
                      <a href={p.live} className="size-14 bg-white text-dark rounded-2xl flex items-center justify-center hover:scale-110 transition-transform"><ExternalLink className="size-6" /></a>
-                     <a href={p.github} className="size-14 glass-premium text-white rounded-2xl flex items-center justify-center hover:scale-110 transition-transform"><Github className="size-6" /></a>
                    </div>
                 </div>
                 <div className="absolute top-6 right-6 px-4 py-2 glass-premium rounded-xl text-xs font-black uppercase text-white tracking-widest shadow-2xl">

@@ -10,10 +10,21 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
+    const randomFilters = [
+      "hue-rotate(0deg) saturate(1.2) brightness(1.02)",
+      "hue-rotate(90deg) saturate(1.3) contrast(1.05)",
+      "hue-rotate(180deg) sepia(0.1) saturate(1.4)",
+      "hue-rotate(240deg) saturate(1.1) brightness(1.05)",
+      "hue-rotate(320deg) saturate(1.4) contrast(1.1)",
+    ];
+
     if (isDark) {
       document.documentElement.classList.add("dark");
+      document.documentElement.style.filter = "none";
     } else {
       document.documentElement.classList.remove("dark");
+      const nextFilter = randomFilters[Math.floor(Math.random() * randomFilters.length)];
+      document.documentElement.style.filter = nextFilter;
     }
     
     const handleScroll = () => {
