@@ -14,6 +14,12 @@ import figma_jpg from "../assets/figma.jpg";
 import cpp_jpg from "../assets/c++.jpg";
 import java_jpg from "../assets/java.jpg";
 import html_jpg from "../assets/html.jpg";
+import postgresql_webp from "../assets/PostgreSQL.webp";
+import rest_apis_webp from "../assets/REST APIs.webp";
+import docker_webp from "../assets/docker.webp";
+import github_logo_png from "../assets/github-logo.png";
+import railway_webp from "../assets/railway.webp";
+import vercel_webp from "../assets/vercel.webp";
 
 const Skills = () => {
   const skillCategories = [
@@ -43,9 +49,8 @@ const Skills = () => {
       icon: <Database className="text-primary" />,
       skills: [
         { name: "PHP", level: 88, icon: php_logo_png },
-        { name: "REST APIs", level: 98 },
-        { name: "PostgreSQL", level: 88 },
-        { name: "Auth / JWT", level: 90 },
+        { name: "REST APIs", level: 98, icon: rest_apis_webp },
+        { name: "PostgreSQL", level: 88, icon: postgresql_webp },
       ],
     },
     {
@@ -53,10 +58,10 @@ const Skills = () => {
       icon: <Zap className="text-primary" />,
       skills: [
         { name: "Figma", level: 90, icon: figma_jpg },
-        { name: "GitHub", level: 95 },
-        { name: "Vercel", level: 92 },
-        { name: "Railway", level: 90 },
-        { name: "Docker", level: 75 },
+        { name: "GitHub", level: 95, icon: github_logo_png },
+        { name: "Vercel", level: 92, icon: vercel_webp },
+        { name: "Railway", level: 90, icon: railway_webp },
+        { name: "Docker", level: 75, icon: docker_webp },
       ],
     },
   ];
