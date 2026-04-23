@@ -33,11 +33,11 @@ const Background = () => {
       reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
+        this.size = Math.random() * 3 + 2; // Increased size
         this.baseX = this.x;
         this.baseY = this.y;
         this.density = Math.random() * 30 + 1;
-        this.opacity = Math.random() * 0.4 + 0.1;
+        this.opacity = Math.random() * 0.6 + 0.2; // Increased opacity
       }
 
       update() {
@@ -67,7 +67,9 @@ const Background = () => {
       }
 
       draw() {
-        ctx.fillStyle = `rgba(33, 17, 212, ${this.opacity})`;
+        ctx.fillStyle = document.body.classList.contains("light-mode") 
+          ? `rgba(79, 70, 229, ${this.opacity})` 
+          : `rgba(34, 211, 238, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.closePath();
@@ -89,12 +91,12 @@ const Background = () => {
           let dy = particles[i].y - particles[j].y;
           let distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 120) {
-            let opacity = 1 - (distance / 120);
+          if (distance < 150) { // Increased connection distance
+            let opacity = 1 - (distance / 150);
             ctx.strokeStyle = document.body.classList.contains("light-mode") 
-              ? `rgba(79, 70, 229, ${opacity * 0.15})` 
-              : `rgba(34, 211, 238, ${opacity * 0.15})`;
-            ctx.lineWidth = 0.5;
+              ? `rgba(79, 70, 229, ${opacity * 0.3})` // Increased line opacity
+              : `rgba(34, 211, 238, ${opacity * 0.3})`;
+            ctx.lineWidth = 1; // Increased line width
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
