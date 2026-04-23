@@ -3,16 +3,17 @@ import { motion } from "framer-motion";
 import { Code, Bot, Globe, Database, Zap } from "lucide-react";
 
 // Import Assets
-import phpIcon from "../assets/php-logo.png";
-import reactIcon from "../assets/react-logo.jpg";
-import nodeIcon from "../assets/node-js-logo.png";
-import nextIcon from "../assets/next-js-logo.png";
-import pythonIcon from "../assets/python-logo.jpg";
-import tailwindIcon from "../assets/tailwind-css-logo.png";
-import jsIcon from "../assets/js-log0.webp";
-import cppIcon from "../assets/c++.jpg";
-import javaIcon from "../assets/java.webp";
-import htmlIcon from "../assets/html.webp";
+import php_logo_png from "../assets/php-logo.png";
+import react_logo_jpg from "../assets/react-logo.jpg";
+import node_js_logo_png from "../assets/node-js-logo.png";
+import next_js_logo_png from "../assets/next-js-logo.png";
+import python_logo_jpg from "../assets/python-logo.jpg";
+import tailwind_css_logo_png from "../assets/tailwind-css-logo.png";
+import js_logo_jpg from "../assets/js-logo.jpg";
+import figma_jpg from "../assets/figma.jpg";
+import cpp_jpg from "../assets/c++.jpg";
+import java_jpg from "../assets/java.jpg";
+import html_jpg from "../assets/html.jpg";
 
 const Skills = () => {
   const skillCategories = [
@@ -20,27 +21,27 @@ const Skills = () => {
       title: "Programming Languages",
       icon: <Code className="text-primary" />,
       skills: [
-        { name: "Python", level: 92, icon: pythonIcon },
-        { name: "C++", level: 85, icon: cppIcon },
-        { name: "Java", level: 80, icon: javaIcon },
-        { name: "JavaScript", level: 95, icon: jsIcon },
+        { name: "Python", level: 92, icon: python_logo_jpg },
+        { name: "C++", level: 85, icon: cpp_jpg },
+        { name: "Java", level: 80, icon: java_jpg },
+        { name: "JavaScript", level: 95, icon: js_logo_jpg },
       ],
     },
     {
       title: "Web Development",
       icon: <Globe className="text-primary" />,
       skills: [
-        { name: "HTML / CSS", level: 98, icon: htmlIcon },
-        { name: "React / Next.js", level: 95, icon: reactIcon },
-        { name: "Node.js", level: 92, icon: nodeIcon },
-        { name: "Tailwind CSS", level: 96, icon: tailwindIcon },
+        { name: "HTML / CSS", level: 98, icon: html_jpg },
+        { name: "React / Next.js", level: 95, icon: react_logo_jpg },
+        { name: "Node.js", level: 92, icon: node_js_logo_png },
+        { name: "Tailwind CSS", level: 96, icon: tailwind_css_logo_png },
       ],
     },
     {
       title: "Backend & APIs",
       icon: <Database className="text-primary" />,
       skills: [
-        { name: "PHP", level: 88, icon: phpIcon },
+        { name: "PHP", level: 88, icon: php_logo_png },
         { name: "REST APIs", level: 98 },
         { name: "PostgreSQL", level: 88 },
         { name: "Auth / JWT", level: 90 },

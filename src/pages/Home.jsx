@@ -13,16 +13,16 @@ import certAiAgents from "../assets/cert-ai-agents.jpg";
 import certN8N from "../assets/cert-n8n.jpg";
 
 // Tech Icons
-import phpIcon from "../assets/php-logo.png";
-import reactIcon from "../assets/react-logo.jpg";
-import nodeIcon from "../assets/node-js-logo.png";
-import nextIcon from "../assets/next-js-logo.png";
-import pythonIcon from "../assets/python-logo.jpg";
-import tailwindIcon from "../assets/tailwind-css-logo.png";
-import jsIcon from "../assets/js-log0.webp";
-import figmaIcon from "../assets/figma.jpg";
-import cppIcon from "../assets/c++.jpg";
-import javaIcon from "../assets/java.webp";
+import php_logo_png from "../assets/php-logo.png";
+import react_logo_jpg from "../assets/react-logo.jpg";
+import node_js_logo_png from "../assets/node-js-logo.png";
+import next_js_logo_png from "../assets/next-js-logo.png";
+import python_logo_jpg from "../assets/python-logo.jpg";
+import tailwind_css_logo_png from "../assets/tailwind-css-logo.png";
+import js_logo_jpg from "../assets/js-logo.jpg";
+import figma_jpg from "../assets/figma.jpg";
+import cpp_jpg from "../assets/c++.jpg";
+import java_jpg from "../assets/java.jpg";
 
 const Home = () => {
   const [displayText, setDisplayText] = useState("");
@@ -43,22 +43,29 @@ const Home = () => {
 
   useEffect(() => {
     const fetchStats = async () => {
-      try {
-        const repoRes = await fetch("https://api.github.com/users/danyalbut96-khan/repos?per_page=100");
-        const repos = await repoRes.json();
+      const username = "danyalbut96-khan";
+      const token = import.meta.env.VITE_GITHUB_TOKEN;
+      const headers = token ? { Authorization: `token ${token}` } : {};
 
-        const commitRes = await fetch("https://github-contributions-api.jogruber.de/v4/danyalbut96-khan?y=2026");
+      try {
+        // Fetch Repos (Public)
+        const repoRes = await fetch(`https://api.github.com/users/${username}`, { headers });
+        const userData = await repoRes.json();
+        
+        // Fetch Commits via Contributions API (Public only)
+        // If token is available, we could use GraphQL for private, but for now we'll use the most reliable public source
+        const commitRes = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=2026`);
         const commitData = await commitRes.json();
 
         setStats(prev => ({
           ...prev,
-          repos: Array.isArray(repos) ? repos.length : 15,
-          commits: commitData?.total?.["2026"] || 200,
+          repos: userData.public_repos + (token ? (userData.total_private_repos || 0) : 0) || 20,
+          commits: commitData?.total?.["2026"] || 229, // Fallback to 229 as mentioned by user
           loading: false
         }));
       } catch (error) {
         console.error("Error fetching GitHub stats:", error);
-        setStats(prev => ({ ...prev, repos: 15, commits: 200, loading: false }));
+        setStats(prev => ({ ...prev, repos: 20, commits: 229, loading: false }));
       }
     };
     fetchStats();
@@ -183,37 +190,37 @@ const Home = () => {
         </div>
 
         {/* Right Side: Circular Logo with Orbiting Tech Icons */}
-        <div className="relative flex items-center justify-center py-20 lg:py-0 -mt-20 lg:-mt-40">
-          <div className="relative scale-75 md:scale-100">
+        <div className="relative flex items-center justify-center py-20 lg:py-0 -mt-20 lg:-mt-64">
+          <div className="relative scale-50 md:scale-75 lg:scale-100">
             {/* Main Circular Logo */}
-            <motion.a
-              href="https://cloudexify.site"
-              target="_blank"
+            <motion.a 
+              href="https://cloudexify.site" 
+              target="_blank" 
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="relative z-10 block size-64 md:size-96 rounded-full border-[10px] border-primary/20 p-6 bg-background-dark overflow-hidden hover:border-primary/40 transition-all shadow-[0_0_100px_rgba(99,102,241,0.3)]"
+              className="relative z-10 block size-72 md:size-[28rem] rounded-full border-[12px] border-primary/20 p-8 bg-background-dark overflow-hidden hover:border-primary/40 transition-all shadow-[0_0_120px_rgba(99,102,241,0.3)]"
             >
-              <img
-                src={cloudexifyLogo}
-                alt="CloudExify Logo"
+              <img 
+                src={cloudexifyLogo} 
+                alt="CloudExify Logo" 
                 className="w-full h-full object-cover rounded-full"
               />
             </motion.a>
 
             {/* Orbiting Tech Badges - Expanded Orbit to stay outside logo */}
             {[
-              { name: "PHP", icon: phpIcon, radius: 260, duration: 20 },
-              { name: "React", icon: reactIcon, radius: 300, duration: 24 },
-              { name: "Node", icon: nodeIcon, radius: 240, duration: 16 },
-              { name: "Next.js", icon: nextIcon, radius: 340, duration: 28 },
-              { name: "Python", icon: pythonIcon, radius: 220, duration: 22 },
-              { name: "Tailwind", icon: tailwindIcon, radius: 280, duration: 18 },
-              { name: "JS", icon: jsIcon, radius: 320, duration: 21 },
-              { name: "Figma", icon: figmaIcon, radius: 360, duration: 32 },
-              { name: "C++", icon: cppIcon, radius: 250, duration: 19 },
-              { name: "Java", icon: javaIcon, radius: 290, duration: 25 },
+              { name: "PHP", icon: php_logo_png, radius: 320, duration: 20 },
+              { name: "React", icon: react_logo_jpg, radius: 360, duration: 24 },
+              { name: "Node", icon: node_js_logo_png, radius: 280, duration: 16 },
+              { name: "Next.js", icon: next_js_logo_png, radius: 400, duration: 28 },
+              { name: "Python", icon: python_logo_jpg, radius: 260, duration: 22 },
+              { name: "Tailwind", icon: tailwind_css_logo_png, radius: 340, duration: 18 },
+              { name: "JS", icon: js_logo_jpg, radius: 380, duration: 21 },
+              { name: "Figma", icon: figma_jpg, radius: 420, duration: 32 },
+              { name: "C++", icon: cpp_jpg, radius: 300, duration: 19 },
+              { name: "Java", icon: java_jpg, radius: 350, duration: 25 },
             ].map((tech, i) => (
               <motion.div
                 key={i}
