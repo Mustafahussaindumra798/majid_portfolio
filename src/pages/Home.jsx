@@ -289,19 +289,13 @@ const Home = () => {
               <Sparkles className="size-4 text-indigo-500" />
               <span className="text-xs font-black uppercase tracking-widest text-indigo-500">Featured Current Project</span>
             </motion.div>
-            <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
-              Revolutionizing Social Media Management with <span className="text-[#a855f7]">Stitch</span>.
+            <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight text-slate-900 dark:text-white">
+              Revolutionizing Social Media Management with <span className="text-indigo-600 dark:text-[#a855f7]">Stitch</span>.
             </h2>
-            <p className="text-secondary text-lg leading-relaxed mb-8">
-              Stitch is a comprehensive ecosystem designed for content creators and digital agencies.
-              Manage all your platforms—𝕏, Instagram, YouTube, and more—from a single, AI-powered dashboard.
+            <p className="text-secondary dark:text-slate-400 text-lg leading-relaxed mb-10">
+              I am currently lead engineer for **Stitch**, a high-end SaaS platform designed to streamline social media workflows. 
+              Implementing complex scheduling algorithms, real-time analytics, and seamless API integrations to empower creators worldwide.
             </p>
-            <div className="flex gap-4">
-              <div className="p-4 glass-premium rounded-2xl flex-1 text-center">
-                <div className="text-2xl font-black mb-1">10x</div>
-                <div className="text-[10px] uppercase font-bold opacity-40">Faster Workflow</div>
-              </div>
-              <div className="p-4 glass-premium rounded-2xl flex-1 text-center">
                 <div className="text-2xl font-black mb-1">AI</div>
                 <div className="text-[10px] uppercase font-bold opacity-40">Content Engine</div>
               </div>
