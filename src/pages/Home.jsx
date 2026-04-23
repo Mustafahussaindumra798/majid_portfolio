@@ -190,9 +190,9 @@ const Home = () => {
         </div>
 
         {/* Right Side: Circular Logo with Orbiting Tech Icons */}
-        <div className="relative flex items-center justify-center py-20 lg:py-0 -mt-20 lg:-mt-64">
-          <div className="relative scale-50 md:scale-75 lg:scale-100">
-            {/* Main Circular Logo */}
+        <div className="relative flex items-center justify-center py-20 lg:py-0 mt-32 lg:mt-0">
+          <div className="relative scale-50 md:scale-75 lg:scale-100 lg:-translate-y-24">
+            {/* Main Circular Logo with rotating multi-colored border */}
             <motion.a 
               href="https://cloudexify.site" 
               target="_blank" 
@@ -200,27 +200,29 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="relative z-10 block size-72 md:size-[28rem] rounded-full border-[3px] border-primary/30 p-2 bg-background-dark overflow-hidden hover:border-primary/60 transition-all shadow-[0_0_80px_rgba(99,102,241,0.2)]"
+              className="relative z-10 block size-72 md:size-[28rem] rounded-full p-[2px] bg-gradient-to-tr from-indigo-500 via-purple-500 to-cyan-500 animate-spin-slow overflow-hidden shadow-[0_0_80px_rgba(99,102,241,0.2)]"
             >
-              <img 
-                src={cloudexifyLogo} 
-                alt="CloudExify Logo" 
-                className="w-full h-full object-cover rounded-full"
-              />
+              <div className="w-full h-full rounded-full bg-background-dark p-2 overflow-hidden flex items-center justify-center">
+                <img 
+                  src={cloudexifyLogo} 
+                  alt="CloudExify Logo" 
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
             </motion.a>
 
             {/* Orbiting Tech Badges - Slower, more organic movement */}
             {[
-              { name: "PHP", icon: php_logo_png, radius: 340, duration: 40, offset: 0 },
-              { name: "React", icon: react_logo_jpg, radius: 380, duration: 55, offset: 45 },
-              { name: "Node", icon: node_js_logo_png, radius: 300, duration: 35, offset: 90 },
-              { name: "Next.js", icon: next_js_logo_png, radius: 420, duration: 65, offset: 135 },
-              { name: "Python", icon: python_logo_jpg, radius: 280, duration: 45, offset: 180 },
-              { name: "Tailwind", icon: tailwind_css_logo_png, radius: 360, duration: 50, offset: 225 },
-              { name: "JS", icon: js_logo_jpg, radius: 400, duration: 60, offset: 270 },
-              { name: "Figma", icon: figma_jpg, radius: 440, duration: 75, offset: 315 },
-              { name: "C++", icon: cpp_jpg, radius: 320, duration: 42, offset: 160 },
-              { name: "Java", icon: java_jpg, radius: 370, duration: 58, offset: 300 },
+              { name: "PHP", icon: php_logo_png, radius: 340, duration: 45, offset: 0 },
+              { name: "React", icon: react_logo_jpg, radius: 380, duration: 60, offset: 45 },
+              { name: "Node", icon: node_js_logo_png, radius: 300, duration: 40, offset: 90 },
+              { name: "Next.js", icon: next_js_logo_png, radius: 420, duration: 70, offset: 135 },
+              { name: "Python", icon: python_logo_jpg, radius: 280, duration: 50, offset: 180 },
+              { name: "Tailwind", icon: tailwind_css_logo_png, radius: 360, duration: 55, offset: 225 },
+              { name: "JS", icon: js_logo_jpg, radius: 400, duration: 65, offset: 270 },
+              { name: "Figma", icon: figma_jpg, radius: 440, duration: 80, offset: 315 },
+              { name: "C++", icon: cpp_jpg, radius: 320, duration: 48, offset: 160 },
+              { name: "Java", icon: java_jpg, radius: 370, duration: 62, offset: 300 },
             ].map((tech, i) => (
               <motion.div
                 key={i}
@@ -246,15 +248,15 @@ const Home = () => {
                 <motion.div
                   animate={{ 
                     rotate: [-(tech.offset), -(tech.offset + 360)],
-                    y: [0, 15, 0],
-                    x: [0, 10, 0]
+                    y: [0, 20, 0],
+                    x: [0, 15, 0]
                   }}
                   transition={{
                     rotate: { duration: tech.duration, repeat: Infinity, ease: "linear" },
-                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                    x: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }
+                    y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                    x: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }
                   }}
-                  className="pointer-events-auto flex items-center gap-2 p-1.5 rounded-2xl glass-premium shadow-2xl border border-white/20 bg-white/10 backdrop-blur-md"
+                  className="pointer-events-auto flex items-center gap-2 p-1.5 rounded-2xl glass-premium shadow-2xl border border-white/20 bg-white/5 backdrop-blur-md"
                 >
                   <div className="size-10 rounded-xl overflow-hidden bg-white/20 p-1.5 shadow-inner">
                     <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain" />
