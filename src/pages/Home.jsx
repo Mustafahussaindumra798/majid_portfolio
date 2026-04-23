@@ -241,7 +241,7 @@ const Home = () => {
               Start Free — No Credit Card Needed →
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* GitHub/Commits Section visibility fix applied via index.css classes */}
@@ -414,5 +414,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
