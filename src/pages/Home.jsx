@@ -293,89 +293,85 @@ const Home = () => {
               Revolutionizing Social Media Management with <span className="text-indigo-600 dark:text-[#a855f7]">Stitch</span>.
             </h2>
             <p className="text-secondary dark:text-slate-400 text-lg leading-relaxed mb-10">
-              I am currently lead engineer for **Stitch**, a high-end SaaS platform designed to streamline social media workflows. 
+              I am currently lead engineer for **Stitch**, a high-end SaaS platform designed to streamline social media workflows.
               Implementing complex scheduling algorithms, real-time analytics, and seamless API integrations to empower creators worldwide.
             </p>
-                <div className="text-2xl font-black mb-1">AI</div>
-                <div className="text-[10px] uppercase font-bold opacity-40">Content Engine</div>
-              </div>
-            </div>
+            <div className="text-2xl font-black mb-1">AI</div>
+            <div className="text-[10px] uppercase font-bold opacity-40">Content Engine</div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative glow-purple-cyan"
-          >
-            <div className="stitch-card p-8 text-left text-white overflow-hidden">
-              <div className="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full w-fit mb-6">
-                <span className="text-[10px] font-bold tracking-widest text-white/80">🟢 NOW LIVE — FREE TO TRY</span>
-              </div>
-
-              <h3 className="text-3xl font-black leading-tight mb-4">
-                One app. Every platform. <br />
-                <span className="text-[#a855f7]">Stitch</span> it all.
-              </h3>
-
-              <div className="flex flex-wrap gap-2 mb-8">
-                {["𝕏 X/Twitter", "📷 Instagram", "▶ YouTube", "♪ TikTok", "💼 LinkedIn", "📘 Facebook"].map((tag, i) => (
-                  <span key={i} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-[10px] font-bold">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {[
-                  { title: "Smart Scheduling", desc: "Auto-post at peak times", icon: <Calendar className="size-4 text-pink-500" /> },
-                  { title: "Live Streaming", desc: "Go live to multiple platforms", icon: <Radio className="size-4 text-blue-500" /> },
-                  { title: "AI Captions", desc: "Generate engaging copy", icon: <Sparkles className="size-4 text-yellow-500" /> },
-                  { title: "Deep Analytics", desc: "Know what's growing", icon: <BarChart3 className="size-4 text-cyan-500" /> },
-                ].map((feature, i) => (
-                  <div key={i} className="p-3 bg-white/5 border border-white/5 rounded-xl">
-                    <div className="mb-2">{feature.icon}</div>
-                    <div className="text-xs font-bold mb-1">{feature.title}</div>
-                    <div className="text-[10px] text-white/40">{feature.desc}</div>
-                  </div>
-                ))}
-              </div>
-
-              <button className="w-full py-4 bg-gradient-to-r from-[#a855f7] to-[#ec4899] rounded-xl font-black text-xs uppercase tracking-widest shadow-lg shadow-purple-500/20 hover:scale-[1.02] transition-transform">
-                Experience Stitch Now →
-              </button>
-            </div>
-          </motion.div>
         </div>
       </div>
 
-      {/* GitHub/Commits Section visibility fix applied via index.css classes */}
-      <div className="w-full py-32 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl px-6 github-section">
-        {[
-          { label: "Projects Built", value: stats.repos, icon: <Github className="text-indigo-500" /> },
-          { label: "Commits in 2025", value: stats.commits, icon: <Briefcase className="text-green-500" /> },
-          { label: "Clients Served", value: stats.clients, icon: <Users className="text-yellow-500" /> },
-          { label: "Years Experience", value: stats.experience, icon: <Star className="text-primary" /> },
-        ].map((stat, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ y: -10 }}
-            className="glass-premium p-8 rounded-3xl text-center"
-          >
-            {stats.loading ? (
-              <div className="animate-pulse flex flex-col items-center">
-                <div className="h-10 w-20 bg-slate-200 dark:bg-slate-800 rounded-lg mb-4"></div>
-                <div className="h-4 w-24 bg-slate-200 dark:bg-slate-800 rounded"></div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        className="relative glow-purple-cyan"
+      >
+        <div className="stitch-card p-8 text-left text-white overflow-hidden">
+          <div className="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full w-fit mb-6">
+            <span className="text-[10px] font-bold tracking-widest text-white/80">🟢 NOW LIVE — FREE TO TRY</span>
+          </div>
+
+          <h3 className="text-3xl font-black leading-tight mb-4">
+            One app. Every platform. <br />
+            <span className="text-[#a855f7]">Stitch</span> it all.
+          </h3>
+
+          <div className="flex flex-wrap gap-2 mb-8">
+            {["𝕏 X/Twitter", "📷 Instagram", "▶ YouTube", "♪ TikTok", "💼 LinkedIn", "📘 Facebook"].map((tag, i) => (
+              <span key={i} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-[10px] font-bold">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            {[
+              { title: "Smart Scheduling", desc: "Auto-post at peak times", icon: <Calendar className="size-4 text-pink-500" /> },
+              { title: "Live Streaming", desc: "Go live to multiple platforms", icon: <Radio className="size-4 text-blue-500" /> },
+              { title: "AI Captions", desc: "Generate engaging copy", icon: <Sparkles className="size-4 text-yellow-500" /> },
+              { title: "Deep Analytics", desc: "Know what's growing", icon: <BarChart3 className="size-4 text-cyan-500" /> },
+            ].map((feature, i) => (
+              <div key={i} className="p-3 bg-white/5 border border-white/5 rounded-xl">
+                <div className="mb-2">{feature.icon}</div>
+                <div className="text-xs font-bold mb-1">{feature.title}</div>
+                <div className="text-[10px] text-white/40">{feature.desc}</div>
               </div>
-            ) : (
-              <>
-                <div className="flex justify-center mb-4">{stat.icon}</div>
-                <div className="text-4xl font-black mb-2">{stat.value}</div>
-                <div className="text-xs font-bold uppercase tracking-widest text-secondary">{stat.label}</div>
-              </>
-            )}
-          </motion.div>
-        ))}
+            ))}
+          </div>
+
+          <button className="w-full py-4 bg-gradient-to-r from-[#a855f7] to-[#ec4899] rounded-xl font-black text-xs uppercase tracking-widest shadow-lg shadow-purple-500/20 hover:scale-[1.02] transition-transform">
+            Coming Soon ☁️  →
+          </button>
+        </div>
+      </motion.div>
+
+
+      {/* GitHub/Commits Section */}
+      <div className="w-full py-32 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl px-6 github-section">
+        {
+          [
+            <motion.div
+              key={i}
+              whileHover={{ y: -10 }}
+              className="glass-premium p-8 rounded-3xl text-center"
+            >
+              {stats.loading ? (
+                <div className="animate-pulse flex flex-col items-center">
+                  <div className="h-10 w-20 bg-slate-200 dark:bg-slate-800 rounded-lg mb-4"></div>
+                  <div className="h-4 w-24 bg-slate-200 dark:bg-slate-800 rounded"></div>
+                </div>
+              ) : (
+                <>
+                  <div className="flex justify-center mb-4">{stat.icon}</div>
+                  <div className="text-4xl font-black mb-2">{stat.value}</div>
+                  <div className="text-xs font-bold uppercase tracking-widest text-secondary">{stat.label}</div>
+                </>
+              )}
+            </motion.div>
+          ]
+        }
       </div>
 
       {/* Certifications Section */}
@@ -514,7 +510,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
