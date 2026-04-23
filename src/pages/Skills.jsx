@@ -32,7 +32,8 @@ const Skills = () => {
       icon: <Globe className="text-primary" />,
       skills: [
         { name: "HTML / CSS", level: 98, icon: html_jpg },
-        { name: "React / Next.js", level: 95, icon: react_logo_jpg },
+        { name: "React", level: 95, icon: react_logo_jpg },
+        { name: "Next.js", level: 95, icon: next_js_logo_png },
         { name: "Node.js", level: 92, icon: node_js_logo_png },
         { name: "Tailwind CSS", level: 96, icon: tailwind_css_logo_png },
       ],
@@ -51,6 +52,7 @@ const Skills = () => {
       title: "Tools & Platforms",
       icon: <Zap className="text-primary" />,
       skills: [
+        { name: "Figma", level: 90, icon: figma_jpg },
         { name: "GitHub", level: 95 },
         { name: "Vercel", level: 92 },
         { name: "Railway", level: 90 },
