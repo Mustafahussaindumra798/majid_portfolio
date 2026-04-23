@@ -30,7 +30,7 @@ const Contact = () => {
           <Phone className="size-3" /> Get In Touch
         </motion.div>
         <h2 className="text-5xl font-black mb-6">Let's <span className="text-primary italic">Build</span> Something Great.</h2>
-        <p className="text-slate-600 dark:text-slate-400 text-lg">Whether it's a new SaaS platform or an AI collaboration, I'm ready for the challenge.</p>
+        <p className="text-secondary text-lg">Whether it's a new SaaS platform or an AI collaboration, I'm ready for the challenge.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
@@ -97,7 +97,7 @@ const Contact = () => {
                        <CheckCircle className="size-12" />
                     </div>
                     <h3 className="text-3xl font-black mb-4">Transmission Received!</h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-lg mb-10 max-w-sm">Your message has been encoded and dispatched. I'll get back to you within 24 hours.</p>
+                    <p className="text-secondary text-lg mb-10 max-w-sm">Your message has been encoded and dispatched. I'll get back to you within 24 hours.</p>
                     <button onClick={() => setStatus("idle")} className="font-black text-primary uppercase tracking-widest text-xs hover:underline">New Transmission</button>
                  </motion.div>
                ) : (
@@ -133,7 +133,7 @@ const Contact = () => {
                     </div>
                     <button 
                       disabled={status === "submitting"}
-                      className="w-full bg-primary hover:bg-primary/90 disabled:opacity-50 text-white p-6 rounded-[2rem] font-black text-lg transition-all shadow-2xl shadow-primary/30 flex items-center justify-center gap-3 group"
+                      className="w-full bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white p-6 rounded-[2rem] font-black text-lg transition-all shadow-2xl shadow-indigo-500/30 flex items-center justify-center gap-3 group"
                     >
                        {status === "submitting" ? "Encoding Message..." : <>Launch Transmission <Send className="size-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>}
                     </button>

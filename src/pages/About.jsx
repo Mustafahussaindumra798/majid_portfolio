@@ -38,9 +38,9 @@ const About = () => {
           </div>
           <h2 className="text-5xl font-black mb-8">Deeply Rooted in <span className="text-primary">Innovation</span> & Problems Solving.</h2>
           
-          <div className="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+          <div className="space-y-6 text-lg text-secondary leading-relaxed">
             <p>
-              I am <span className="text-slate-900 dark:text-white font-bold">M. Majid Khan</span>, a software engineer who believes that every complex problem has a simple, elegant solution waiting to be discovered.
+              I am <span className="text-primary font-bold">Muhammad Majid Khan</span>, a software engineer who believes that every complex problem has a simple, elegant solution waiting to be discovered.
             </p>
             <p>
               My journey started with a fascination for how code can bridge the gap between imagination and reality. Over the years, I've mastered languages like <span className="font-bold text-primary">Python, C++, Java, and JavaScript</span> to build tools that matter.
@@ -80,8 +80,8 @@ const About = () => {
               <div key={i} className="relative pl-10">
                 <div className={`absolute left-0 top-1.5 size-4 rounded-full border-4 border-background-dark z-10 ${j.active ? 'bg-primary ring-4 ring-primary/20' : 'bg-slate-700'}`}></div>
                 <div className="text-sm font-black text-primary mb-2 tracking-tighter uppercase">{j.year}</div>
-                <h4 className={`text-xl font-bold mb-2 ${j.active ? 'text-slate-900 dark:text-white' : 'text-slate-500'}`}>{j.title}</h4>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{j.desc}</p>
+                <h4 className={`text-xl font-bold mb-2 ${j.active ? 'text-primary' : 'text-secondary opacity-50'}`}>{j.title}</h4>
+                <p className="text-secondary text-sm leading-relaxed">{j.desc}</p>
               </div>
             ))}
           </div>

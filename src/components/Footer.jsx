@@ -4,17 +4,17 @@ import { Github, Linkedin, Mail, Cpu, Shield, FileText } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="mt-40 border-t border-slate-200 dark:border-primary/20 bg-background-light dark:bg-background-dark/80 backdrop-blur-xl pt-20 pb-10">
+    <footer className="mt-40 border-t border-slate-200 dark:border-primary/20 bg-background-light dark:bg-[#111] backdrop-blur-xl pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-8">
-              <div className="size-10 bg-primary rounded-xl flex items-center justify-center text-white">
+              <div className="size-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white">
                 <Cpu className="size-6" />
               </div>
               <h2 className="text-xl font-black tracking-tighter">MAJID<span className="text-primary italic">.KHAN</span></h2>
             </Link>
-            <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-sm">
+            <p className="text-secondary text-lg leading-relaxed max-w-sm">
               Creating high-end digital experiences. For all submissions and inquiries, reach out via the official channel.
             </p>
             <div className="mt-6 flex items-center gap-2 text-primary font-black">
@@ -27,7 +27,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {["Home", "About", "Skills", "Projects", "Services", "Contact", "Dashboard"].map((item) => (
                 <li key={item}>
-                  <Link to={item === "Home" ? "/" : `/${item.toLowerCase()}`} className="text-sm font-bold text-slate-500 hover:text-primary transition-colors">
+                  <Link to={item === "Home" ? "/" : `/${item.toLowerCase()}`} className="text-sm font-bold text-secondary hover:text-primary transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -37,7 +37,7 @@ const Footer = () => {
 
           <div>
             <h4 className="text-xs font-black uppercase tracking-widest text-primary mb-8">Social Connect</h4>
-            <ul className="space-y-4 text-slate-500">
+            <ul className="space-y-4 text-secondary">
               <li>
                 <a href="https://github.com/danyalbut96-khan" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-bold hover:text-primary transition-colors">
                   <Github className="size-4" /> GitHub
@@ -58,17 +58,26 @@ const Footer = () => {
         </div>
 
         <div className="pt-10 border-t border-slate-200 dark:border-primary/10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs font-bold text-slate-500">
-            © 2024 — Portfolio by <span className="text-slate-900 dark:text-white">M. Majid Khan</span>
+          <p className="text-xs font-bold text-secondary">
+            © {new Date().getFullYear()} — Portfolio by <span className="text-primary">Muhammad Majid Khan</span>
           </p>
-          <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-400">
+          <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest text-secondary">
              <Link to="/privacy" className="hover:text-primary flex items-center gap-1"><Shield className="size-3" /> Privacy Policy</Link>
              <Link to="/terms" className="hover:text-primary flex items-center gap-1"><FileText className="size-3" /> Terms of Service</Link>
           </div>
         </div>
+
+        <p style={{ textAlign: "center", fontSize: "12px", opacity: 0.5, marginTop: "16px" }}>
+          Made with ❤️ by 
+          <a href="https://cloudexify.site" target="_blank" rel="noopener noreferrer"
+             style={{ color: "inherit", textDecoration: "underline", marginLeft: "4px" }}>
+            Cloudexify
+          </a>
+        </p>
       </div>
     </footer>
   );
 };
 
 export default Footer;
+

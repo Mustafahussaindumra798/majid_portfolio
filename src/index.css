@@ -2,50 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --border-color: rgba(255,255,255,0.1);
+  --dot-color: rgba(255,255,255,0.15);
+  --primary: #4f46e5;
+}
+
+body.light-mode {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #0a0a0a;
+  --text-secondary: #555555;
+  --border-color: rgba(0,0,0,0.1);
+  --dot-color: rgba(0,0,0,0.12);
+}
+
 @layer base {
   body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     @apply font-display antialiased transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+  }
+  
+  p, span, li {
+    color: var(--text-secondary);
   }
 }
 
 @layer components {
   .glass-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--bg-card);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .dark .glass-card {
-    background: rgba(18, 16, 34, 0.6);
-    border: 1px solid rgba(33, 17, 212, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid var(--border-color);
   }
 
   .glass-premium {
     @apply relative overflow-hidden;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   }
 
-  .dark .glass-premium {
-    background: linear-gradient(135deg, rgba(33, 17, 212, 0.1), rgba(18, 16, 34, 0.4));
-    border: 1px solid rgba(33, 17, 212, 0.3);
+  .light-mode .glass-premium {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.01));
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-indigo-500 to-purple-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
   }
 
   /* Animated Mesh Background */
   .bg-mesh-premium {
     @apply fixed inset-0 -z-10 pointer-events-none;
-    background-color: #121022;
+    background-color: var(--bg-primary);
     background-image: 
-      radial-gradient(at 0% 0%, rgba(33, 17, 212, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(79, 70, 229, 0.1) 0px, transparent 50%),
-      radial-gradient(at 50% 100%, rgba(124, 58, 237, 0.05) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(124, 58, 237, 0.1) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(236, 72, 153, 0.05) 0px, transparent 50%);
     animation: meshMove 20s ease infinite alternate;
   }
 
@@ -55,8 +80,28 @@
   }
 }
 
-.dark {
-  color-scheme: dark;
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  background: #25D366;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  animation: whatsapp-pulse 2s infinite;
+  transition: transform 0.2s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 4px 36px rgba(37,211,102,0.75); }
 }
 
 ::-webkit-scrollbar {
@@ -64,9 +109,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-background-light dark:bg-background-dark;
+  background: var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary/20 hover:bg-primary/40 rounded-full transition-colors;
+  background: rgba(79, 70, 229, 0.2);
+  border-radius: 10px;
 }
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 70, 229, 0.4);
+}
+
