@@ -58,22 +58,24 @@ const Footer = () => {
         </div>
 
         <div className="pt-10 border-t border-slate-200 dark:border-primary/10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs font-bold text-secondary">
-            © {new Date().getFullYear()} — Portfolio by <span className="text-primary">Muhammad Majid Khan</span>
+          <p className="text-xs font-bold text-secondary dark:text-slate-400">
+            © {new Date().getFullYear()} — Portfolio by <span className="text-indigo-600 dark:text-primary">Muhammad Majid Khan</span>
           </p>
-          <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest text-secondary">
-             <Link to="/privacy" className="hover:text-primary flex items-center gap-1"><Shield className="size-3" /> Privacy Policy</Link>
-             <Link to="/terms" className="hover:text-primary flex items-center gap-1"><FileText className="size-3" /> Terms of Service</Link>
+          <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest text-secondary dark:text-slate-400">
+             <Link to="/privacy" className="hover:text-primary flex items-center gap-1 transition-colors"><Shield className="size-3" /> Privacy Policy</Link>
+             <Link to="/terms" className="hover:text-primary flex items-center gap-1 transition-colors"><FileText className="size-3" /> Terms of Service</Link>
           </div>
         </div>
 
-        <p style={{ textAlign: "center", fontSize: "12px", opacity: 0.5, marginTop: "16px" }}>
-          Made with ❤️ by 
-          <a href="https://cloudexify.site" target="_blank" rel="noopener noreferrer"
-             style={{ color: "inherit", textDecoration: "underline", marginLeft: "4px" }}>
-            Cloudexify
-          </a>
-        </p>
+        <div className="mt-12 pt-8 border-t border-slate-100 dark:border-white/5 text-center">
+          <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">
+            Engineered with Precision by 
+            <a href="https://cloudexify.site" target="_blank" rel="noopener noreferrer"
+               className="ml-2 text-indigo-600 dark:text-primary hover:underline transition-all">
+              CloudExify
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
