@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  ArrowRight, Star, Users, Briefcase, Github, 
-  Calendar, Radio, Sparkles, BarChart3, X, ExternalLink, Award 
+import {
+  ArrowRight, Star, Users, Briefcase, Github,
+  Calendar, Radio, Sparkles, BarChart3, X, ExternalLink, Award
 } from "lucide-react";
 import { Link } from "react-router-dom";
+
+// Import Assets
+import cloudexifyLogo from "../assets/cloudexify-logo.png";
+import certAiAgents from "../assets/cert-ai-agents.jpg";
+import certN8N from "../assets/cert-n8n.jpg";
 
 const Home = () => {
   const [displayText, setDisplayText] = useState("");
@@ -28,8 +33,8 @@ const Home = () => {
       try {
         const repoRes = await fetch("https://api.github.com/users/danyalbut96-khan/repos?per_page=100");
         const repos = await repoRes.json();
-        
-        const commitRes = await fetch("https://github-contributions-api.jogruber.de/v4/danyalbut96-khan?y=2025");
+
+        const commitRes = await fetch("https://github-contributions-api.jogruber.de/v4/danyalbut96-khan?y=2026");
         const commitData = await commitRes.json();
 
         setStats(prev => ({
@@ -74,7 +79,7 @@ const Home = () => {
       issuer: "Simplilearn",
       date: "12th March 2026",
       code: "9951537",
-      image: "/assets/cert-ai-agents.jpg",
+      image: certAiAgents,
       logo: "Simplilearn | SkillUp"
     },
     {
@@ -83,7 +88,7 @@ const Home = () => {
       issuer: "Simplilearn",
       date: "12th March 2026",
       code: "9952664",
-      image: "/assets/cert-n8n.jpg",
+      image: certN8N,
       logo: "Simplilearn | SkillUp"
     }
   ];
@@ -113,19 +118,19 @@ const Home = () => {
           >
             Hi, I'm <span className="text-gradient">Muhammad Majid Khan</span>
           </motion.h1>
-          
-          <motion.a 
-            href="https://cloudexify.site" 
-            target="_blank" 
+
+          <motion.a
+            href="https://cloudexify.site"
+            target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
             className="inline-block"
           >
-            <img 
-              src="/assets/cloudexify-logo.png" 
-              alt="CloudExify Logo" 
+            <img
+              src={cloudexifyLogo}
+              alt="CloudExify Logo"
               className="h-10 w-auto drop-shadow-lg hover:scale-110 transition-transform"
             />
           </motion.a>
@@ -157,7 +162,7 @@ const Home = () => {
           className="mt-12 flex flex-col sm:flex-row gap-6 items-center justify-center"
         >
           <a href="#projects">
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-10 py-5 bg-indigo-600 text-white rounded-2xl font-black text-lg shadow-2xl shadow-indigo-500/40 hover:shadow-indigo-500/60 transition-all flex items-center gap-3 group"
@@ -166,14 +171,14 @@ const Home = () => {
             </motion.button>
           </a>
           <a href="https://wa.me/923411949277?text=Hi%20Majid%2C%20I%27m%20interested%20in%20hiring%20you!" target="_blank" rel="noopener noreferrer">
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-10 py-5 bg-[#25D366] text-white rounded-2xl font-black text-lg shadow-2xl shadow-green-500/40 hover:shadow-green-500/60 transition-all flex items-center gap-3"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.135 1.524 5.882L0 24l6.302-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.979.997-3.645-.234-.374A9.818 9.818 0 1112 21.818z"/>
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.135 1.524 5.882L0 24l6.302-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.979.997-3.645-.234-.374A9.818 9.818 0 1112 21.818z" />
               </svg>
               Hire Me
             </motion.button>
@@ -197,7 +202,7 @@ const Home = () => {
               Revolutionizing Social Media Management with <span className="text-[#a855f7]">Stitch</span>.
             </h2>
             <p className="text-secondary text-lg leading-relaxed mb-8">
-              Stitch is a comprehensive ecosystem designed for content creators and digital agencies. 
+              Stitch is a comprehensive ecosystem designed for content creators and digital agencies.
               Manage all your platforms—𝕏, Instagram, YouTube, and more—from a single, AI-powered dashboard.
             </p>
             <div className="flex gap-4">
@@ -222,7 +227,7 @@ const Home = () => {
               <div className="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full w-fit mb-6">
                 <span className="text-[10px] font-bold tracking-widest text-white/80">🟢 NOW LIVE — FREE TO TRY</span>
               </div>
-              
+
               <h3 className="text-3xl font-black leading-tight mb-4">
                 One app. Every platform. <br />
                 <span className="text-[#a855f7]">Stitch</span> it all.
@@ -322,7 +327,7 @@ const Home = () => {
                 </div>
                 <h3 className="text-2xl font-black mb-2">{cert.title}</h3>
                 <div className="text-sm font-bold opacity-60 mb-6">Issued by: {cert.issuer}</div>
-                
+
                 <div className="relative group cursor-pointer overflow-hidden rounded-2xl mb-8 border border-white/5" onClick={() => setSelectedCert(cert)}>
                   <img src={cert.image} alt={cert.title} className="w-full h-auto" />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">

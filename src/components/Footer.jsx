@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, Cpu, Shield, FileText } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="mt-40 border-t border-slate-200 dark:border-primary/20 bg-background-light dark:bg-[#111] backdrop-blur-xl pt-20 pb-10">
+    <footer className="mt-40 border-t border-slate-200 dark:border-primary/20 bg-background-light backdrop-blur-xl pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
           <div className="md:col-span-2">
