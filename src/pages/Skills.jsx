@@ -99,12 +99,20 @@ const Skills = () => {
             <div className="space-y-8">
               {category.skills.map((skill, j) => (
                 <div key={j}>
-                  <div className="flex justify-between items-center mb-3">
-                    <div className="flex items-center gap-3">
-                      {skill.icon && <img src={skill.icon} alt={skill.name} className="size-6 rounded-md object-contain bg-white/5 p-0.5" />}
-                      <span className="text-sm font-black uppercase tracking-tighter opacity-80">{skill.name}</span>
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="flex items-center gap-4">
+                      {skill.icon && (
+                        <div className="size-12 rounded-2xl bg-white dark:bg-white/5 p-2 shadow-lg border border-slate-200 dark:border-white/10 flex items-center justify-center">
+                          <img src={skill.icon} alt={skill.name} className="w-full h-full object-contain" />
+                        </div>
+                      )}
+                      <span className="text-base font-black uppercase tracking-tighter text-secondary dark:text-white/80">
+                        {skill.name}
+                      </span>
                     </div>
-                    <span className="text-xs font-bold px-3 py-1 bg-primary/10 rounded-full text-primary">{skill.level}%</span>
+                    <span className="text-xs font-bold px-4 py-1.5 bg-primary/10 rounded-full text-primary border border-primary/20">
+                      {skill.level}%
+                    </span>
                   </div>
                   <div className="h-2.5 bg-slate-900/10 dark:bg-white/5 rounded-full overflow-hidden border border-slate-900/5 dark:border-white/5 shadow-inner">
                     <motion.div
