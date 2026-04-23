@@ -350,28 +350,31 @@ const Home = () => {
 
       {/* GitHub/Commits Section */}
       <div className="w-full py-32 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl px-6 github-section">
-        {
-          [
-            <motion.div
-              key={i}
-              whileHover={{ y: -10 }}
-              className="glass-premium p-8 rounded-3xl text-center"
-            >
-              {stats.loading ? (
-                <div className="animate-pulse flex flex-col items-center">
-                  <div className="h-10 w-20 bg-slate-200 dark:bg-slate-800 rounded-lg mb-4"></div>
-                  <div className="h-4 w-24 bg-slate-200 dark:bg-slate-800 rounded"></div>
-                </div>
-              ) : (
-                <>
-                  <div className="flex justify-center mb-4">{stat.icon}</div>
-                  <div className="text-4xl font-black mb-2">{stat.value}</div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-secondary">{stat.label}</div>
-                </>
-              )}
-            </motion.div>
-          ]
-        }
+        {[
+          { label: "Projects Built", value: stats.repos, icon: <Github className="text-indigo-500" /> },
+          { label: "Commits in 2026", value: stats.commits, icon: <Briefcase className="text-green-500" /> },
+          { label: "Clients Served", value: stats.clients, icon: <Users className="text-yellow-500" /> },
+          { label: "Years Experience", value: stats.experience, icon: <Star className="text-primary" /> },
+        ].map((stat, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ y: -10 }}
+            className="glass-premium p-8 rounded-3xl text-center"
+          >
+            {stats.loading ? (
+              <div className="animate-pulse flex flex-col items-center">
+                <div className="h-10 w-20 bg-slate-200 dark:bg-slate-800 rounded-lg mb-4"></div>
+                <div className="h-4 w-24 bg-slate-200 dark:bg-slate-800 rounded"></div>
+              </div>
+            ) : (
+              <>
+                <div className="flex justify-center mb-4">{stat.icon}</div>
+                <div className="text-4xl font-black mb-2">{stat.value}</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-secondary">{stat.label}</div>
+              </>
+            )}
+          </motion.div>
+        ))}
       </div>
 
       {/* Certifications Section */}
