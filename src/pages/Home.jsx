@@ -109,7 +109,7 @@ const Home = () => {
           Open for collaboration
         </motion.div>
 
-        <div className="flex flex-col items-center gap-6 mb-6">
+        <div className="flex flex-col items-center gap-12 mb-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -118,22 +118,61 @@ const Home = () => {
           >
             Hi, I'm <span className="text-gradient">Muhammad Majid Khan</span>
           </motion.h1>
+          
+          {/* Circular Logo with Orbiting Tech Icons */}
+          <div className="relative group">
+            {/* Main Circular Logo */}
+            <motion.a 
+              href="https://cloudexify.site" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="relative z-10 block size-32 md:size-40 rounded-full border-4 border-primary/20 p-2 bg-background-dark overflow-hidden hover:border-primary transition-colors shadow-2xl shadow-primary/20"
+            >
+              <img 
+                src={cloudexifyLogo} 
+                alt="CloudExify Logo" 
+                className="w-full h-full object-cover rounded-full"
+              />
+            </motion.a>
 
-          <motion.a
-            href="https://cloudexify.site"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="inline-block"
-          >
-            <img
-              src={cloudexifyLogo}
-              alt="CloudExify Logo"
-              className="h-10 w-auto drop-shadow-lg hover:scale-110 transition-transform"
-            />
-          </motion.a>
+            {/* Orbiting Tech Badges */}
+            {[
+              { name: "PHP", color: "bg-blue-600", delay: 0 },
+              { name: "React", color: "bg-cyan-500", delay: 1 },
+              { name: "Node", color: "bg-green-500", delay: 2 },
+              { name: "JS", color: "bg-yellow-400", delay: 3 },
+              { name: "Python", color: "bg-indigo-500", delay: 4 },
+              { name: "Tailwind", color: "bg-sky-400", delay: 5 },
+            ].map((tech, i) => (
+              <motion.div
+                key={i}
+                animate={{
+                  x: [
+                    Math.cos(i * (Math.PI / 3)) * 100,
+                    Math.cos(i * (Math.PI / 3) + 0.5) * 110,
+                    Math.cos(i * (Math.PI / 3)) * 100,
+                  ],
+                  y: [
+                    Math.sin(i * (Math.PI / 3)) * 100,
+                    Math.sin(i * (Math.PI / 3) + 0.5) * 90,
+                    Math.sin(i * (Math.PI / 3)) * 100,
+                  ],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: tech.delay,
+                }}
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 px-3 py-1.5 rounded-full text-[10px] font-black text-white shadow-lg ${tech.color} whitespace-nowrap`}
+              >
+                {tech.name}
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         <motion.div
