@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  ArrowRight, Star, Users, Briefcase, Zap, Github, 
+  ArrowRight, Star, Users, Briefcase, Github, 
   Calendar, Radio, Sparkles, BarChart3, X, ExternalLink, Award 
 } from "lucide-react";
 import { Link } from "react-router-dom";
