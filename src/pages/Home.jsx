@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight, Star, Users, Briefcase, Github,
-  Calendar, Radio, Sparkles, BarChart3, X, ExternalLink, Award
+  Calendar, Radio, Sparkles, BarChart3, X, ExternalLink, Award,
+  Database, Layout, Terminal, Cpu, Code
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
