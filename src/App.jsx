@@ -49,7 +49,7 @@ function App() {
 
         <a href="https://wa.me/923411949277?text=Hi%20Majid%2C%20I%20saw%20your%20portfolio%20and%20I%27m%20interested%20in%20your%20services!"
            target="_blank" rel="noopener noreferrer"
-           class="whatsapp-float" aria-label="Chat on WhatsApp">
+           className="whatsapp-float" aria-label="Chat on WhatsApp">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15
             -.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475

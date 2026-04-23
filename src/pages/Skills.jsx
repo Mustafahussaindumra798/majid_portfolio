@@ -60,7 +60,7 @@ const Skills = () => {
           </div>
           <h2 className="text-4xl font-black">Advanced Technical Stack</h2>
         </div>
-        <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed italic">
+        <p className="text-lg text-secondary leading-relaxed italic">
           "Mastering the tools of tomorrow, to solve the problems of today."
         </p>
       </motion.div>

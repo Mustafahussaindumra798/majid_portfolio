@@ -89,7 +89,7 @@ const Projects = () => {
              <span className="text-xs font-black uppercase tracking-widest text-primary">Portfolio Selection</span>
           </div>
           <h2 className="text-5xl font-black mb-6">Proven <span className="text-primary">Impact</span> Through Code.</h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-lg text-secondary">
             A diverse collection of systems and interfaces built with performance and user experience as the core.
           </p>
         </motion.div>
@@ -99,7 +99,7 @@ const Projects = () => {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-6 py-3 rounded-xl text-sm font-black transition-all ${filter === cat ? 'bg-primary text-white shadow-lg' : 'text-slate-500 hover:text-primary'}`}
+              className={`px-6 py-3 rounded-xl text-sm font-black transition-all ${filter === cat ? 'bg-primary text-white shadow-lg' : 'text-secondary hover:text-primary'}`}
             >
               {cat}
             </button>
@@ -135,7 +135,7 @@ const Projects = () => {
                 <p className="text-secondary text-sm leading-relaxed mb-8">{p.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {p.tech.map(t => (
-                    <span key={t} className="px-4 py-2 bg-slate-800/50 border border-white/5 rounded-xl text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    <span key={t} className="px-4 py-2 bg-slate-800/50 border border-white/5 rounded-xl text-[10px] font-black uppercase tracking-widest opacity-40">
                       {t}
                     </span>
                   ))}

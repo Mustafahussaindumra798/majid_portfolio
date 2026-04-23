@@ -35,7 +35,7 @@ const Services = () => {
            className="text-center max-w-2xl mx-auto mb-20"
         >
           <h2 className="text-5xl font-black mb-6">Expert <span className="text-primary">Capabilities</span></h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 italic">"I provide the engineering excellence required to turn ambitious concepts into market-ready realities."</p>
+          <p className="text-lg text-secondary italic">"I provide the engineering excellence required to turn ambitious concepts into market-ready realities."</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -52,7 +52,7 @@ const Services = () => {
                 {s.icon}
               </div>
               <h3 className="text-2xl font-black mb-6">{s.title}</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8 flex-grow">{s.desc}</p>
+              <p className="text-secondary text-sm leading-relaxed mb-8 flex-grow">{s.desc}</p>
               <ul className="space-y-4 pt-8 border-t border-white/5">
                 {s.features.map(f => (
                   <li key={f} className="flex items-center gap-3 text-xs font-black uppercase tracking-tighter opacity-80">
@@ -70,7 +70,7 @@ const Services = () => {
          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
            <div className="lg:col-span-1">
               <h3 className="text-4xl font-black mb-6 flex items-center gap-3"><MessageSquare className="text-primary" /> Kind Words</h3>
-              <p className="text-slate-600 dark:text-slate-400 mb-8">What founders and collaborators say about working with me on deep-tech projects.</p>
+              <p className="text-secondary mb-8">What founders and collaborators say about working with me on deep-tech projects.</p>
            </div>
            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
@@ -106,14 +106,14 @@ const Services = () => {
                       {faq.q}
                       <span className="group-open:rotate-180 transition-transform">▼</span>
                    </summary>
-                   <div className="p-6 pt-0 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-white/5">{faq.a}</div>
+                   <div className="p-6 pt-0 text-secondary text-sm leading-relaxed border-t border-white/5">{faq.a}</div>
                 </details>
               ))}
             </div>
           </div>
           <div className="glass-premium p-12 rounded-[3rem] bg-primary/10 border-primary/20 h-fit">
             <h3 className="text-2xl font-black mb-6 flex items-center gap-3"><FileText className="text-primary" /> Blog / Insights</h3>
-            <p className="text-slate-600 dark:text-slate-400 mb-8 font-medium">Coming soon: I'll be sharing articles on AI integration, modern React patterns, and SaaS architecture.</p>
+            <p className="text-secondary mb-8 font-medium">Coming soon: I'll be sharing articles on AI integration, modern React patterns, and SaaS architecture.</p>
             <div className="h-40 bg-background-dark/40 rounded-2xl flex items-center justify-center border border-white/5 border-dashed">
                <span className="text-xs font-black uppercase tracking-widest opacity-30">Writing in Progress...</span>
             </div>

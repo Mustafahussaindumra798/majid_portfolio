@@ -57,7 +57,7 @@ const About = () => {
             ].map((box, i) => (
               <div key={i} className="glass-premium p-6 rounded-2xl">
                 <div className="mb-4">{box.icon}</div>
-                <div className="text-slate-500 uppercase text-[10px] font-black tracking-widest mb-1">{box.label}</div>
+                <div className="text-secondary uppercase text-[10px] font-black tracking-widest mb-1">{box.label}</div>
                 <div className="text-lg font-bold">{box.value}</div>
               </div>
             ))}
@@ -89,7 +89,7 @@ const About = () => {
           <div className="mt-16 p-8 bg-primary/10 rounded-3xl border border-primary/20">
             <div className="flex items-center gap-4">
               <Lightbulb className="size-8 text-primary" />
-              <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
+              <p className="text-sm font-medium text-secondary">
                 "Simple is better than complex. Complex is better than complicated."
               </p>
             </div>

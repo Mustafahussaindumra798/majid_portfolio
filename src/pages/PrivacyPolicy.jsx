@@ -20,24 +20,24 @@ const PrivacyPolicy = () => {
           <h1 className="text-4xl font-black">Privacy Policy</h1>
         </div>
 
-        <div className="space-y-8 text-slate-600 dark:text-slate-400 leading-relaxed">
+        <div className="space-y-8 text-secondary leading-relaxed">
           <section>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">1. Data Collection</h2>
+            <h2 className="text-xl font-bold mb-4">1. Data Collection</h2>
             <p>We only collect information that you voluntarily provide through our contact form, such as your name and email address. This data is used solely to respond to your inquiries.</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">2. Cookies</h2>
+            <h2 className="text-xl font-bold mb-4">2. Cookies</h2>
             <p>Our portfolio uses minimal local storage to remember your theme preference (Dark/Light mode). We do not use tracking cookies or third-party marketing analytics.</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">3. Third-Party Services</h2>
+            <h2 className="text-xl font-bold mb-4">3. Third-Party Services</h2>
             <p>We may link to external sites like GitHub or LinkedIn. We are not responsible for their privacy practices. Our backend is hosted on secure platforms like Railway.</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">4. Security</h2>
+            <h2 className="text-xl font-bold mb-4">4. Security</h2>
             <p>We implement professional-grade security measures to protect your information, but remember that no method of transmission over the internet is 100% secure.</p>
           </section>
 

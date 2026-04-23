@@ -20,19 +20,19 @@ const TermsOfService = () => {
           <h1 className="text-4xl font-black">Terms of Service</h1>
         </div>
 
-        <div className="space-y-8 text-slate-600 dark:text-slate-400 leading-relaxed">
+        <div className="space-y-8 text-secondary leading-relaxed">
           <section>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">1. Acceptance of Terms</h2>
+            <h2 className="text-xl font-bold mb-4">1. Acceptance of Terms</h2>
             <p>By accessing this portfolio, you agree to be bound by these terms. This site is intended as a professional showcase of software engineering capabilities.</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">2. Intellectual Property</h2>
+            <h2 className="text-xl font-bold mb-4">2. Intellectual Property</h2>
             <p>The code, designs, and content exhibited here are the intellectual property of M. Majid Khan unless otherwise stated. Projects may be linked to their respective open-source licenses.</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">3. Use of Information</h2>
+            <h2 className="text-xl font-bold mb-4">3. Use of Information</h2>
             <p>Information provided on this site is for general information purposes only. While I strive for accuracy, I make no warranties about the completeness or reliability of the tools showcased.</p>
           </section>
 

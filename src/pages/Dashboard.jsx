@@ -41,7 +41,7 @@ const Dashboard = () => {
               <span className="text-xs font-black uppercase tracking-widest text-primary">System Monitoring & Tools</span>
            </div>
            <h2 className="text-5xl font-black mb-6">Explore the <span className="text-primary italic">Forge</span>.</h2>
-           <p className="text-lg text-slate-600 dark:text-slate-400">Standalone internal tools and dashboards built during deep-tech development sprints.</p>
+           <p className="text-lg text-secondary">Standalone internal tools and dashboards built during deep-tech development sprints.</p>
          </motion.div>
       </div>
 
@@ -65,7 +65,7 @@ const Dashboard = () => {
              </div>
              
              <h3 className="text-2xl font-black mb-4">{t.title}</h3>
-             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8 flex-grow">{t.desc}</p>
+             <p className="text-secondary text-sm leading-relaxed mb-8 flex-grow">{t.desc}</p>
              
              <div className="flex flex-wrap gap-2 mb-10">
                 {t.tags.map(tag => (
