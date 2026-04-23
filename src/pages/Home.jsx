@@ -12,6 +12,18 @@ import cloudexifyLogo from "../assets/cloudexify-logo.png";
 import certAiAgents from "../assets/cert-ai-agents.jpg";
 import certN8N from "../assets/cert-n8n.jpg";
 
+// Tech Icons
+import phpIcon from "../assets/php-logo.png";
+import reactIcon from "../assets/react-logo.jpg";
+import nodeIcon from "../assets/node-js-logo.png";
+import nextIcon from "../assets/next-js-logo.png";
+import pythonIcon from "../assets/python-logo.jpg";
+import tailwindIcon from "../assets/tailwind-css-logo.png";
+import jsIcon from "../assets/js-log0.webp";
+import figmaIcon from "../assets/figma.jpg";
+import cppIcon from "../assets/c++.jpg";
+import javaIcon from "../assets/java.webp";
+
 const Home = () => {
   const [displayText, setDisplayText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
@@ -41,7 +53,7 @@ const Home = () => {
         setStats(prev => ({
           ...prev,
           repos: Array.isArray(repos) ? repos.length : 15,
-          commits: commitData?.total?.["2025"] || 200,
+          commits: commitData?.total?.["2026"] || 200,
           loading: false
         }));
       } catch (error) {
@@ -171,35 +183,37 @@ const Home = () => {
         </div>
 
         {/* Right Side: Circular Logo with Orbiting Tech Icons */}
-        <div className="relative flex items-center justify-center py-32 lg:py-0">
-          <div className="relative">
+        <div className="relative flex items-center justify-center py-20 lg:py-0 -mt-20 lg:-mt-40">
+          <div className="relative scale-75 md:scale-100">
             {/* Main Circular Logo */}
-            <motion.a 
-              href="https://cloudexify.site" 
-              target="_blank" 
+            <motion.a
+              href="https://cloudexify.site"
+              target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="relative z-10 block size-56 md:size-80 rounded-full border-[6px] border-primary/20 p-4 bg-background-dark overflow-hidden hover:border-primary/40 transition-all shadow-[0_0_80px_rgba(99,102,241,0.25)]"
+              className="relative z-10 block size-64 md:size-96 rounded-full border-[10px] border-primary/20 p-6 bg-background-dark overflow-hidden hover:border-primary/40 transition-all shadow-[0_0_100px_rgba(99,102,241,0.3)]"
             >
-              <img 
-                src={cloudexifyLogo} 
-                alt="CloudExify Logo" 
+              <img
+                src={cloudexifyLogo}
+                alt="CloudExify Logo"
                 className="w-full h-full object-cover rounded-full"
               />
             </motion.a>
 
             {/* Orbiting Tech Badges - Expanded Orbit to stay outside logo */}
             {[
-              { name: "PHP", icon: <Database className="size-4" />, color: "from-blue-600 to-blue-400", radius: 220, duration: 18 },
-              { name: "React", icon: <Layout className="size-4" />, color: "from-cyan-500 to-blue-500", radius: 250, duration: 22 },
-              { name: "Node", icon: <Terminal className="size-4" />, color: "from-green-600 to-emerald-400", radius: 190, duration: 14 },
-              { name: "Next.js", icon: <Cpu className="size-4" />, color: "from-gray-800 to-gray-600", radius: 280, duration: 25 },
-              { name: "Python", icon: <Code className="size-4" />, color: "from-indigo-600 to-blue-700", radius: 210, duration: 20 },
-              { name: "Tailwind", icon: <Sparkles className="size-4" />, color: "from-sky-500 to-indigo-400", radius: 235, duration: 16 },
-              { name: "JS", icon: <Code className="size-4" />, color: "from-yellow-500 to-orange-400", radius: 265, duration: 19 },
-              { name: "Figma", icon: <Layout className="size-4" />, color: "from-pink-500 to-purple-500", radius: 300, duration: 28 },
+              { name: "PHP", icon: phpIcon, radius: 260, duration: 20 },
+              { name: "React", icon: reactIcon, radius: 300, duration: 24 },
+              { name: "Node", icon: nodeIcon, radius: 240, duration: 16 },
+              { name: "Next.js", icon: nextIcon, radius: 340, duration: 28 },
+              { name: "Python", icon: pythonIcon, radius: 220, duration: 22 },
+              { name: "Tailwind", icon: tailwindIcon, radius: 280, duration: 18 },
+              { name: "JS", icon: jsIcon, radius: 320, duration: 21 },
+              { name: "Figma", icon: figmaIcon, radius: 360, duration: 32 },
+              { name: "C++", icon: cppIcon, radius: 250, duration: 19 },
+              { name: "Java", icon: javaIcon, radius: 290, duration: 25 },
             ].map((tech, i) => (
               <motion.div
                 key={i}
@@ -229,10 +243,12 @@ const Home = () => {
                     repeat: Infinity,
                     ease: "linear",
                   }}
-                  className={`pointer-events-auto flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gradient-to-br ${tech.color} text-white shadow-xl border border-white/10`}
+                  className="pointer-events-auto flex items-center gap-2 p-1 rounded-xl glass-premium shadow-xl border border-white/10"
                 >
-                  {tech.icon}
-                  <span className="text-[10px] font-black uppercase tracking-tighter">{tech.name}</span>
+                  <div className="size-10 rounded-lg overflow-hidden bg-white/5 p-1.5">
+                    <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain" />
+                  </div>
+                  <span className="pr-3 text-[10px] font-black uppercase tracking-tighter text-white">{tech.name}</span>
                 </motion.div>
               </motion.div>
             ))}
