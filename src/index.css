@@ -14,28 +14,32 @@
 }
 
 body.light-mode {
-  --bg-primary: #f8f9fa;
-  --bg-secondary: #ffffff;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
   --bg-card: #ffffff;
-  --text-primary: #0a0a0a;
-  --text-secondary: #555555;
-  --border-color: rgba(0,0,0,0.1);
-  --dot-color: rgba(0,0,0,0.12);
+  --text-primary: #000000;
+  --text-secondary: #1f2937;
+  --border-color: rgba(0,0,0,0.15);
+  --dot-color: rgba(0,0,0,0.2);
 }
 
 @layer base {
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    @apply font-display antialiased transition-colors duration-300;
+    @apply font-display antialiased transition-all duration-300;
   }
   
   h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
   }
   
-  p, span, li {
-    color: var(--text-secondary);
+  p, span, li, div {
+    color: var(--text-primary);
+  }
+
+  .text-secondary {
+    color: var(--text-secondary) !important;
   }
 }
 

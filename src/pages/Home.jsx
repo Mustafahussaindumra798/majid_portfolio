@@ -91,157 +91,172 @@ const Home = () => {
   return (
     <div className="relative pt-20 pb-32 flex flex-col items-center overflow-x-hidden">
       {/* Hero Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full max-w-7xl px-6">
-        <div className="flex flex-col items-start text-left">
-          <motion.div
+      <div className="flex flex-col items-center text-center w-full max-w-4xl px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-500 text-xs font-bold uppercase tracking-widest mb-8"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+          </span>
+          Open for collaboration
+        </motion.div>
+
+        <div className="flex flex-col items-center gap-6 mb-6">
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-500 text-xs font-bold uppercase tracking-widest mb-8"
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-7xl font-black tracking-tight"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-            </span>
-            Open for collaboration
-          </motion.div>
-
-          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-black tracking-tight"
-            >
-              Hi, I'm <span className="text-gradient">Muhammad Majid Khan</span>
-            </motion.h1>
-            
-            <motion.a 
-              href="https://cloudexify.site" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-block mt-4 md:mt-0"
-            >
-              <img 
-                src="/assets/cloudexify-logo.png" 
-                alt="CloudExify Logo" 
-                className="h-10 w-auto drop-shadow-lg hover:scale-110 transition-transform"
-              />
-            </motion.a>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            Hi, I'm <span className="text-gradient">Muhammad Majid Khan</span>
+          </motion.h1>
+          
+          <motion.a 
+            href="https://cloudexify.site" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="h-12 md:h-16 flex items-center text-2xl md:text-4xl font-bold"
+            className="inline-block"
           >
-            <span className="text-primary">{displayText}</span>
-            <span className="w-1 h-8 md:h-12 bg-primary ml-1 animate-pulse"></span>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="mt-8 text-lg text-secondary leading-relaxed max-w-xl"
-          >
-            BSc Software Engineering @ COMSATS University · Building digital products from Karak, Pakistan
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="mt-12 flex flex-col sm:flex-row gap-6 items-center"
-          >
-            <a href="#projects">
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-indigo-600 text-white rounded-2xl font-black text-lg shadow-2xl shadow-indigo-500/40 hover:shadow-indigo-500/60 transition-all flex items-center gap-3 group"
-              >
-                View My Work <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-            </a>
-            <a href="https://wa.me/923411949277?text=Hi%20Majid%2C%20I%27m%20interested%20in%20hiring%20you!" target="_blank" rel="noopener noreferrer">
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-[#25D366] text-white rounded-2xl font-black text-lg shadow-2xl shadow-green-500/40 hover:shadow-green-500/60 transition-all flex items-center gap-3"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.135 1.524 5.882L0 24l6.302-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.979.997-3.645-.234-.374A9.818 9.818 0 1112 21.818z"/>
-                </svg>
-                Hire Me
-              </motion.button>
-            </a>
-          </motion.div>
+            <img 
+              src="/assets/cloudexify-logo.png" 
+              alt="CloudExify Logo" 
+              className="h-10 w-auto drop-shadow-lg hover:scale-110 transition-transform"
+            />
+          </motion.a>
         </div>
 
-        {/* Right Side: Stitch App Preview Card */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="relative w-full max-w-md mx-auto lg:mx-0 glow-purple-cyan"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="h-12 md:h-16 flex items-center text-2xl md:text-4xl font-bold justify-center"
         >
-          <div className="stitch-card p-8 text-left text-white overflow-hidden">
-            <div className="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full w-fit mb-6">
-              <span className="text-[10px] font-bold tracking-widest text-white/80">🟢 NOW LIVE — FREE TO TRY</span>
-            </div>
-            
-            <h3 className="text-3xl font-black leading-tight mb-4">
-              One app. Every platform. <br />
-              <span className="text-[#a855f7]">Stitch</span> it all.
-            </h3>
-
-            <div className="flex flex-wrap gap-2 mb-8">
-              {["𝕏 X/Twitter", "📷 Instagram", "▶ YouTube", "♪ TikTok", "💼 LinkedIn", "📘 Facebook"].map((tag, i) => (
-                <span key={i} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-[10px] font-bold">
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {[
-                { title: "Smart Scheduling", desc: "Auto-post at peak times", icon: <Calendar className="size-4 text-pink-500" /> },
-                { title: "Live Streaming", desc: "Go live to multiple platforms", icon: <Radio className="size-4 text-blue-500" /> },
-                { title: "AI Captions", desc: "Generate engaging copy", icon: <Sparkles className="size-4 text-yellow-500" /> },
-                { title: "Deep Analytics", desc: "Know what's growing", icon: <BarChart3 className="size-4 text-cyan-500" /> },
-              ].map((feature, i) => (
-                <div key={i} className="p-3 bg-white/5 border border-white/5 rounded-xl">
-                  <div className="mb-2">{feature.icon}</div>
-                  <div className="text-xs font-bold mb-1">{feature.title}</div>
-                  <div className="text-[10px] text-white/40">{feature.desc}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex justify-between items-center mb-8 px-2 py-4 border-y border-white/5">
-              <div className="text-center">
-                <div className="text-sm font-black">6+</div>
-                <div className="text-[8px] text-white/40 uppercase">Platforms</div>
-              </div>
-              <div className="text-center">
-                <div className="text-sm font-black">10x</div>
-                <div className="text-[8px] text-white/40 uppercase">Faster</div>
-              </div>
-              <div className="text-center">
-                <div className="text-sm font-black">1</div>
-                <div className="text-[8px] text-white/40 uppercase">Dashboard</div>
-              </div>
-            </div>
-
-            <button className="w-full py-4 bg-gradient-to-r from-[#a855f7] to-[#ec4899] rounded-xl font-black text-xs uppercase tracking-widest shadow-lg shadow-purple-500/20 hover:scale-[1.02] transition-transform">
-              Start Free — No Credit Card Needed →
-            </button>
-          </div>
+          <span className="text-primary">{displayText}</span>
+          <span className="w-1 h-8 md:h-12 bg-primary ml-1 animate-pulse"></span>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="mt-8 text-lg text-secondary leading-relaxed max-w-xl mx-auto"
+        >
+          BSc Software Engineering @ COMSATS University · Building digital products from Karak, Pakistan
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="mt-12 flex flex-col sm:flex-row gap-6 items-center justify-center"
+        >
+          <a href="#projects">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-5 bg-indigo-600 text-white rounded-2xl font-black text-lg shadow-2xl shadow-indigo-500/40 hover:shadow-indigo-500/60 transition-all flex items-center gap-3 group"
+            >
+              View My Work <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
+            </motion.button>
+          </a>
+          <a href="https://wa.me/923411949277?text=Hi%20Majid%2C%20I%27m%20interested%20in%20hiring%20you!" target="_blank" rel="noopener noreferrer">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-5 bg-[#25D366] text-white rounded-2xl font-black text-lg shadow-2xl shadow-green-500/40 hover:shadow-green-500/60 transition-all flex items-center gap-3"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.135 1.524 5.882L0 24l6.302-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.979.997-3.645-.234-.374A9.818 9.818 0 1112 21.818z"/>
+              </svg>
+              Hire Me
+            </motion.button>
+          </a>
+        </motion.div>
+      </div>
+
+      {/* Featured Project Section - Stitch */}
+      <div className="w-full py-32 flex flex-col items-center bg-indigo-500/5 mt-20">
+        <div className="max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-500/10 rounded-full mb-6"
+            >
+              <Sparkles className="size-4 text-indigo-500" />
+              <span className="text-xs font-black uppercase tracking-widest text-indigo-500">Featured Current Project</span>
+            </motion.div>
+            <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
+              Revolutionizing Social Media Management with <span className="text-[#a855f7]">Stitch</span>.
+            </h2>
+            <p className="text-secondary text-lg leading-relaxed mb-8">
+              Stitch is a comprehensive ecosystem designed for content creators and digital agencies. 
+              Manage all your platforms—𝕏, Instagram, YouTube, and more—from a single, AI-powered dashboard.
+            </p>
+            <div className="flex gap-4">
+              <div className="p-4 glass-premium rounded-2xl flex-1 text-center">
+                <div className="text-2xl font-black mb-1">10x</div>
+                <div className="text-[10px] uppercase font-bold opacity-40">Faster Workflow</div>
+              </div>
+              <div className="p-4 glass-premium rounded-2xl flex-1 text-center">
+                <div className="text-2xl font-black mb-1">AI</div>
+                <div className="text-[10px] uppercase font-bold opacity-40">Content Engine</div>
+              </div>
+            </div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative glow-purple-cyan"
+          >
+            <div className="stitch-card p-8 text-left text-white overflow-hidden">
+              <div className="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full w-fit mb-6">
+                <span className="text-[10px] font-bold tracking-widest text-white/80">🟢 NOW LIVE — FREE TO TRY</span>
+              </div>
+              
+              <h3 className="text-3xl font-black leading-tight mb-4">
+                One app. Every platform. <br />
+                <span className="text-[#a855f7]">Stitch</span> it all.
+              </h3>
+
+              <div className="flex flex-wrap gap-2 mb-8">
+                {["𝕏 X/Twitter", "📷 Instagram", "▶ YouTube", "♪ TikTok", "💼 LinkedIn", "📘 Facebook"].map((tag, i) => (
+                  <span key={i} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-[10px] font-bold">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {[
+                  { title: "Smart Scheduling", desc: "Auto-post at peak times", icon: <Calendar className="size-4 text-pink-500" /> },
+                  { title: "Live Streaming", desc: "Go live to multiple platforms", icon: <Radio className="size-4 text-blue-500" /> },
+                  { title: "AI Captions", desc: "Generate engaging copy", icon: <Sparkles className="size-4 text-yellow-500" /> },
+                  { title: "Deep Analytics", desc: "Know what's growing", icon: <BarChart3 className="size-4 text-cyan-500" /> },
+                ].map((feature, i) => (
+                  <div key={i} className="p-3 bg-white/5 border border-white/5 rounded-xl">
+                    <div className="mb-2">{feature.icon}</div>
+                    <div className="text-xs font-bold mb-1">{feature.title}</div>
+                    <div className="text-[10px] text-white/40">{feature.desc}</div>
+                  </div>
+                ))}
+              </div>
+
+              <button className="w-full py-4 bg-gradient-to-r from-[#a855f7] to-[#ec4899] rounded-xl font-black text-xs uppercase tracking-widest shadow-lg shadow-purple-500/20 hover:scale-[1.02] transition-transform">
+                Experience Stitch Now →
+              </button>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {/* GitHub/Commits Section visibility fix applied via index.css classes */}
