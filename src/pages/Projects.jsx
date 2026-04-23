@@ -13,7 +13,7 @@ const Projects = () => {
       category: "Web",
       description: "Taskflow is a modern task management dashboard with list, board, and calendar views for productivity tracking.",
       tech: ["Next.js", "Tailwind CSS", "CSS"],
-      image: "https://s.wordpress.com/mshots/v1/https://todo-eta-six-26.vercel.app?w=1200",
+      image: "https://image.thum.io/get/width/1200/crop/675/https://todo-eta-six-26.vercel.app/",
       live: "https://todo-eta-six-26.vercel.app/",
       github: "#"
     },
@@ -22,7 +22,7 @@ const Projects = () => {
       category: "Web",
       description: "Admissions landing page for Sarwaan Digital with course highlights, campus details, and strong CTA placement.",
       tech: ["Next.js", "Tailwind CSS", "CSS"],
-      image: "https://s.wordpress.com/mshots/v1/https://sarwaan.vercel.app?w=1200",
+      image: "https://image.thum.io/get/width/1200/crop/675/https://sarwaan.vercel.app/",
       live: "https://sarwaan.vercel.app/",
       github: "#"
     },
@@ -31,7 +31,7 @@ const Projects = () => {
       category: "Web",
       description: "A sleek VPN dashboard showcasing connection status, country selection, and upload/download metrics.",
       tech: ["Next.js", "Tailwind CSS", "CSS"],
-      image: "https://s.wordpress.com/mshots/v1/https://cyanidevpn.vercel.app?w=1200",
+      image: "https://image.thum.io/get/width/1200/crop/675/https://cyanidevpn.vercel.app/",
       live: "https://cyanidevpn.vercel.app/",
       github: "#"
     },
@@ -40,7 +40,7 @@ const Projects = () => {
       category: "Web",
       description: "A beauty studio homepage with elegant pink branding, booking actions, and featured review statistics.",
       tech: ["Next.js", "Tailwind CSS", "CSS"],
-      image: "https://s.wordpress.com/mshots/v1/https://ayanoormakeupstudio.vercel.app?w=1200",
+      image: "https://image.thum.io/get/width/1200/crop/675/https://ayanoormakeupstudio.vercel.app/",
       live: "https://ayanoormakeupstudio.vercel.app/",
       github: "#"
     },
@@ -49,7 +49,7 @@ const Projects = () => {
       category: "Web",
       description: "A premium gym landing page presenting services, trainer info, and join-now membership callouts.",
       tech: ["Next.js", "Tailwind CSS", "CSS"],
-      image: "https://s.wordpress.com/mshots/v1/https://royalfitnesgym.vercel.app?w=1200",
+      image: "https://image.thum.io/get/width/1200/crop/675/https://royalfitnesgym.vercel.app/",
       live: "https://royalfitnesgym.vercel.app/",
       github: "#"
     },
@@ -58,7 +58,7 @@ const Projects = () => {
       category: "Web",
       description: "A modern text utilities interface for uppercase/lowercase conversion, word count, and text cleanup.",
       tech: ["Next.js", "Tailwind CSS", "CSS"],
-      image: "https://s.wordpress.com/mshots/v1/https://text-frontend-lyart.vercel.app?w=1200",
+      image: "https://image.thum.io/get/width/1200/crop/675/https://text-frontend-lyart.vercel.app/",
       live: "https://text-frontend-lyart.vercel.app/",
       github: "#"
     },
@@ -67,7 +67,7 @@ const Projects = () => {
       category: "AI",
       description: "AI-powered image background remover with drag-and-drop upload and instant transparent output.",
       tech: ["Python", "Tailwind CSS", "CSS"],
-      image: "https://s.wordpress.com/mshots/v1/https://bg-remover-frontend-ochre.vercel.app?w=1200",
+      image: "https://image.thum.io/get/width/1200/crop/675/https://bg-remover-frontend-ochre.vercel.app/",
       live: "https://bg-remover-frontend-ochre.vercel.app/",
       github: "#"
     }
