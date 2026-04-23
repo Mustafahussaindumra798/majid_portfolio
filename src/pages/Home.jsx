@@ -171,33 +171,35 @@ const Home = () => {
         </div>
 
         {/* Right Side: Circular Logo with Orbiting Tech Icons */}
-        <div className="relative flex items-center justify-center py-20">
+        <div className="relative flex items-center justify-center py-32 lg:py-0">
           <div className="relative">
             {/* Main Circular Logo */}
-            <motion.a
-              href="https://cloudexify.site"
-              target="_blank"
+            <motion.a 
+              href="https://cloudexify.site" 
+              target="_blank" 
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="relative z-10 block size-48 md:size-64 rounded-full border-8 border-primary/10 p-4 bg-background-dark overflow-hidden hover:border-primary/40 transition-all shadow-[0_0_50px_rgba(99,102,241,0.3)]"
+              className="relative z-10 block size-56 md:size-80 rounded-full border-[6px] border-primary/20 p-4 bg-background-dark overflow-hidden hover:border-primary/40 transition-all shadow-[0_0_80px_rgba(99,102,241,0.25)]"
             >
-              <img
-                src={cloudexifyLogo}
-                alt="CloudExify Logo"
+              <img 
+                src={cloudexifyLogo} 
+                alt="CloudExify Logo" 
                 className="w-full h-full object-cover rounded-full"
               />
             </motion.a>
 
-            {/* Orbiting Tech Badges with 3D stylized look */}
+            {/* Orbiting Tech Badges - Expanded Orbit to stay outside logo */}
             {[
-              { name: "PHP", icon: <Database className="size-4" />, color: "from-blue-600 to-blue-400", radius: 160, duration: 15 },
-              { name: "React", icon: <Layout className="size-4" />, color: "from-cyan-500 to-blue-500", radius: 180, duration: 18 },
-              { name: "Node", icon: <Terminal className="size-4" />, color: "from-green-600 to-emerald-400", radius: 140, duration: 12 },
-              { name: "Next.js", icon: <Cpu className="size-4" />, color: "from-gray-800 to-gray-600", radius: 200, duration: 22 },
-              { name: "Python", icon: <Code className="size-4" />, color: "from-indigo-600 to-blue-700", radius: 170, duration: 20 },
-              { name: "Tailwind", icon: <Sparkles className="size-4" />, color: "from-sky-500 to-indigo-400", radius: 150, duration: 14 },
+              { name: "PHP", icon: <Database className="size-4" />, color: "from-blue-600 to-blue-400", radius: 220, duration: 18 },
+              { name: "React", icon: <Layout className="size-4" />, color: "from-cyan-500 to-blue-500", radius: 250, duration: 22 },
+              { name: "Node", icon: <Terminal className="size-4" />, color: "from-green-600 to-emerald-400", radius: 190, duration: 14 },
+              { name: "Next.js", icon: <Cpu className="size-4" />, color: "from-gray-800 to-gray-600", radius: 280, duration: 25 },
+              { name: "Python", icon: <Code className="size-4" />, color: "from-indigo-600 to-blue-700", radius: 210, duration: 20 },
+              { name: "Tailwind", icon: <Sparkles className="size-4" />, color: "from-sky-500 to-indigo-400", radius: 235, duration: 16 },
+              { name: "JS", icon: <Code className="size-4" />, color: "from-yellow-500 to-orange-400", radius: 265, duration: 19 },
+              { name: "Figma", icon: <Layout className="size-4" />, color: "from-pink-500 to-purple-500", radius: 300, duration: 28 },
             ].map((tech, i) => (
               <motion.div
                 key={i}
@@ -227,10 +229,10 @@ const Home = () => {
                     repeat: Infinity,
                     ease: "linear",
                   }}
-                  className={`pointer-events-auto flex items-center gap-2 px-4 py-2 rounded-2xl bg-gradient-to-br ${tech.color} text-white shadow-[0_10px_20px_rgba(0,0,0,0.3)] border border-white/20`}
+                  className={`pointer-events-auto flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gradient-to-br ${tech.color} text-white shadow-xl border border-white/10`}
                 >
                   {tech.icon}
-                  <span className="text-xs font-black uppercase tracking-tighter">{tech.name}</span>
+                  <span className="text-[10px] font-black uppercase tracking-tighter">{tech.name}</span>
                 </motion.div>
               </motion.div>
             ))}
