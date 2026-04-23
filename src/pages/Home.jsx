@@ -145,7 +145,7 @@ const Home = () => {
             className="mt-12 flex flex-col sm:flex-row gap-6 items-center"
           >
             <a href="#projects">
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 bg-indigo-600 text-white rounded-2xl font-black text-lg shadow-2xl shadow-indigo-500/40 hover:shadow-indigo-500/60 transition-all flex items-center gap-3 group"
@@ -154,7 +154,7 @@ const Home = () => {
               </motion.button>
             </a>
             <a href="https://wa.me/923411949277?text=Hi%20Majid%2C%20I%27m%20interested%20in%20hiring%20you!" target="_blank" rel="noopener noreferrer">
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 bg-[#25D366] text-white rounded-2xl font-black text-lg shadow-2xl shadow-green-500/40 hover:shadow-green-500/60 transition-all flex items-center gap-3"
@@ -173,18 +173,18 @@ const Home = () => {
         <div className="relative flex items-center justify-center py-20">
           <div className="relative">
             {/* Main Circular Logo */}
-            <motion.a 
-              href="https://cloudexify.site" 
-              target="_blank" 
+            <motion.a
+              href="https://cloudexify.site"
+              target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
               className="relative z-10 block size-48 md:size-64 rounded-full border-8 border-primary/10 p-4 bg-background-dark overflow-hidden hover:border-primary/40 transition-all shadow-[0_0_50px_rgba(99,102,241,0.3)]"
             >
-              <img 
-                src={cloudexifyLogo} 
-                alt="CloudExify Logo" 
+              <img
+                src={cloudexifyLogo}
+                alt="CloudExify Logo"
                 className="w-full h-full object-cover rounded-full"
               />
             </motion.a>
@@ -235,7 +235,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </div>>
+      </div>
 
       {/* Featured Project Section - Stitch */}
       <div className="w-full py-32 flex flex-col items-center bg-indigo-500/5 mt-20">
