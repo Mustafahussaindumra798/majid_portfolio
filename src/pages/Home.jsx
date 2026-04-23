@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Star, Users, Briefcase, Zap, Github } from "lucide-react";
+import { 
+  ArrowRight, Star, Users, Briefcase, Zap, Github, 
+  Calendar, Radio, Sparkles, BarChart3, X, ExternalLink, Award 
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -9,6 +12,8 @@ const Home = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const words = ["Full Stack Developer", "SaaS Builder", "Founder of Cloudexify", "Open Source Contributor"];
   const typingSpeed = isDeleting ? 50 : 100;
+
+  const [selectedCert, setSelectedCert] = useState(null);
 
   const [stats, setStats] = useState({
     repos: 0,
@@ -62,92 +67,185 @@ const Home = () => {
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, wordIndex]);
 
+  const certifications = [
+    {
+      id: 1,
+      title: "AI Agents for Beginners",
+      issuer: "Simplilearn",
+      date: "12th March 2026",
+      code: "9951537",
+      image: "/assets/cert-ai-agents.jpg",
+      logo: "Simplilearn | SkillUp"
+    },
+    {
+      id: 2,
+      title: "n8n Course: No Code AI Agent Builder",
+      issuer: "Simplilearn",
+      date: "12th March 2026",
+      code: "9952664",
+      image: "/assets/cert-n8n.jpg",
+      logo: "Simplilearn | SkillUp"
+    }
+  ];
+
   return (
-    <div className="relative pt-20 pb-32 flex flex-col items-center">
+    <div className="relative pt-20 pb-32 flex flex-col items-center overflow-x-hidden">
       {/* Hero Section */}
-      <div className="flex flex-col items-center text-center max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-500 text-xs font-bold uppercase tracking-widest mb-8"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-          </span>
-          Open for collaboration
-        </motion.div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full max-w-7xl px-6">
+        <div className="flex flex-col items-start text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-500 text-xs font-bold uppercase tracking-widest mb-8"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            </span>
+            Open for collaboration
+          </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6"
-        >
-          Hi, I'm <span className="text-gradient">Muhammad Majid Khan</span>
-        </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="h-12 md:h-16 flex items-center justify-center text-2xl md:text-4xl font-bold"
-        >
-          <span className="text-primary">{displayText}</span>
-          <span className="w-1 h-8 md:h-12 bg-primary ml-1 animate-pulse"></span>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-8 text-lg text-secondary leading-relaxed max-w-2xl"
-        >
-          BSc Software Engineering @ COMSATS University · Building digital products from Karak, Pakistan
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mt-12 flex flex-col sm:flex-row gap-6 items-center"
-        >
-          <a href="#projects">
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 bg-indigo-600 text-white rounded-2xl font-black text-lg shadow-2xl shadow-indigo-500/40 hover:shadow-indigo-500/60 transition-all flex items-center gap-3 group"
+          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-5xl md:text-7xl font-black tracking-tight"
             >
-              View My Work <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
-          </a>
-          <a href="https://wa.me/923411949277?text=Hi%20Majid%2C%20I%27m%20interested%20in%20hiring%20you!" target="_blank" rel="noopener noreferrer">
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 bg-[#25D366] text-white rounded-2xl font-black text-lg shadow-2xl shadow-green-500/40 hover:shadow-green-500/60 transition-all flex items-center gap-3"
+              Hi, I'm <span className="text-gradient">Muhammad Majid Khan</span>
+            </motion.h1>
+            
+            <motion.a 
+              href="https://cloudexify.site" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-block mt-4 md:mt-0"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.135 1.524 5.882L0 24l6.302-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.979.997-3.645-.234-.374A9.818 9.818 0 1112 21.818z"/>
-              </svg>
-              Hire Me
-            </motion.button>
-          </a>
-          <a href="/cv.pdf" download>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 glass-premium rounded-2xl font-black text-lg hover:bg-white/10 transition-all"
-            >
-              Download CV
-            </motion.button>
-          </a>
-        </motion.div>
+              <img 
+                src="/assets/cloudexify-logo.png" 
+                alt="CloudExify Logo" 
+                className="h-10 w-auto drop-shadow-lg hover:scale-110 transition-transform"
+              />
+            </motion.a>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="h-12 md:h-16 flex items-center text-2xl md:text-4xl font-bold"
+          >
+            <span className="text-primary">{displayText}</span>
+            <span className="w-1 h-8 md:h-12 bg-primary ml-1 animate-pulse"></span>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mt-8 text-lg text-secondary leading-relaxed max-w-xl"
+          >
+            BSc Software Engineering @ COMSATS University · Building digital products from Karak, Pakistan
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="mt-12 flex flex-col sm:flex-row gap-6 items-center"
+          >
+            <a href="#projects">
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-5 bg-indigo-600 text-white rounded-2xl font-black text-lg shadow-2xl shadow-indigo-500/40 hover:shadow-indigo-500/60 transition-all flex items-center gap-3 group"
+              >
+                View My Work <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </a>
+            <a href="https://wa.me/923411949277?text=Hi%20Majid%2C%20I%27m%20interested%20in%20hiring%20you!" target="_blank" rel="noopener noreferrer">
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-5 bg-[#25D366] text-white rounded-2xl font-black text-lg shadow-2xl shadow-green-500/40 hover:shadow-green-500/60 transition-all flex items-center gap-3"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.135 1.524 5.882L0 24l6.302-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.979.997-3.645-.234-.374A9.818 9.818 0 1112 21.818z"/>
+                </svg>
+                Hire Me
+              </motion.button>
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Right Side: Stitch App Preview Card */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="relative w-full max-w-md mx-auto lg:mx-0 glow-purple-cyan"
+        >
+          <div className="stitch-card p-8 text-left text-white overflow-hidden">
+            <div className="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full w-fit mb-6">
+              <span className="text-[10px] font-bold tracking-widest text-white/80">🟢 NOW LIVE — FREE TO TRY</span>
+            </div>
+            
+            <h3 className="text-3xl font-black leading-tight mb-4">
+              One app. Every platform. <br />
+              <span className="text-[#a855f7]">Stitch</span> it all.
+            </h3>
+
+            <div className="flex flex-wrap gap-2 mb-8">
+              {["𝕏 X/Twitter", "📷 Instagram", "▶ YouTube", "♪ TikTok", "💼 LinkedIn", "📘 Facebook"].map((tag, i) => (
+                <span key={i} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-[10px] font-bold">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              {[
+                { title: "Smart Scheduling", desc: "Auto-post at peak times", icon: <Calendar className="size-4 text-pink-500" /> },
+                { title: "Live Streaming", desc: "Go live to multiple platforms", icon: <Radio className="size-4 text-blue-500" /> },
+                { title: "AI Captions", desc: "Generate engaging copy", icon: <Sparkles className="size-4 text-yellow-500" /> },
+                { title: "Deep Analytics", desc: "Know what's growing", icon: <BarChart3 className="size-4 text-cyan-500" /> },
+              ].map((feature, i) => (
+                <div key={i} className="p-3 bg-white/5 border border-white/5 rounded-xl">
+                  <div className="mb-2">{feature.icon}</div>
+                  <div className="text-xs font-bold mb-1">{feature.title}</div>
+                  <div className="text-[10px] text-white/40">{feature.desc}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex justify-between items-center mb-8 px-2 py-4 border-y border-white/5">
+              <div className="text-center">
+                <div className="text-sm font-black">6+</div>
+                <div className="text-[8px] text-white/40 uppercase">Platforms</div>
+              </div>
+              <div className="text-center">
+                <div className="text-sm font-black">10x</div>
+                <div className="text-[8px] text-white/40 uppercase">Faster</div>
+              </div>
+              <div className="text-center">
+                <div className="text-sm font-black">1</div>
+                <div className="text-[8px] text-white/40 uppercase">Dashboard</div>
+              </div>
+            </div>
+
+            <button className="w-full py-4 bg-gradient-to-r from-[#a855f7] to-[#ec4899] rounded-xl font-black text-xs uppercase tracking-widest shadow-lg shadow-purple-500/20 hover:scale-[1.02] transition-transform">
+              Start Free — No Credit Card Needed →
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Stats Section */}
-      <div className="w-full py-32 grid grid-cols-2 md:grid-cols-4 gap-8">
+      {/* GitHub/Commits Section visibility fix applied via index.css classes */}
+      <div className="w-full py-32 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl px-6 github-section">
         {[
           { label: "Projects Built", value: stats.repos, icon: <Github className="text-indigo-500" /> },
           { label: "Commits in 2025", value: stats.commits, icon: <Briefcase className="text-green-500" /> },
@@ -175,8 +273,88 @@ const Home = () => {
         ))}
       </div>
 
+      {/* Certifications Section */}
+      <section className="w-full py-32 max-w-7xl px-6" id="certifications">
+        <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-600 dark:text-yellow-500 text-xs font-bold uppercase tracking-widest mb-4"
+          >
+            <Award className="size-3" /> Professional Growth
+          </motion.div>
+          <h2 className="text-4xl md:text-6xl font-black mb-4">📜 Certifications</h2>
+          <p className="text-secondary">Verified credentials from recognized platforms</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {certifications.map((cert) => (
+            <motion.div
+              key={cert.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="cert-card glass-premium p-8 rounded-[2.5rem] flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex justify-between items-start mb-8">
+                  <span className="px-3 py-1 bg-orange-500 text-white text-[10px] font-black rounded-lg">
+                    {cert.logo}
+                  </span>
+                  <span className="text-xs font-bold text-green-500 flex items-center gap-1">
+                    ✅ VERIFIED
+                  </span>
+                </div>
+                <h3 className="text-2xl font-black mb-2">{cert.title}</h3>
+                <div className="text-sm font-bold opacity-60 mb-6">Issued by: {cert.issuer}</div>
+                
+                <div className="relative group cursor-pointer overflow-hidden rounded-2xl mb-8 border border-white/5" onClick={() => setSelectedCert(cert)}>
+                  <img src={cert.image} alt={cert.title} className="w-full h-auto" />
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="px-6 py-3 bg-white text-black font-black text-xs rounded-xl flex items-center gap-2">
+                      <ExternalLink className="size-4" /> View Full Certificate
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center text-xs font-bold opacity-40">
+                <span>Code: {cert.code}</span>
+                <span>{cert.date}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedCert && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] modal-backdrop flex items-center justify-center p-6"
+            onClick={() => setSelectedCert(null)}
+          >
+            <button className="absolute top-8 right-8 text-white hover:scale-110 transition-transform">
+              <X className="size-10" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              src={selectedCert.image}
+              alt={selectedCert.title}
+              className="max-w-full max-h-[85vh] lightbox-img rounded-xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Testimonials Section */}
-      <div className="w-full py-32" id="testimonials">
+      <div className="w-full py-32 max-w-7xl px-6" id="testimonials">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-6xl font-black mb-4">What Clients Say</h2>
           <div className="w-24 h-2 bg-primary mx-auto rounded-full"></div>
@@ -236,4 +414,5 @@ const Home = () => {
 };
 
 export default Home;
+
 

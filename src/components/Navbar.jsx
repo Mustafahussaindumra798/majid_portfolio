@@ -34,6 +34,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Skills", path: "/skills" },
+    { name: "Certifications", path: "/#certifications" },
     { name: "Projects", path: "/projects" },
     { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" },
@@ -56,8 +57,8 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`px-5 py-2 rounded-xl text-xs font-black uppercase tracking-widest transition-all hover:bg-primary/10 hover:text-primary ${
-                  location.pathname === link.path ? "text-primary bg-primary/10" : "text-secondary"
+                className={`px-5 py-2 rounded-xl text-xs font-black uppercase tracking-widest transition-all hover:bg-primary/10 hover:text-primary nav-link ${
+                  location.pathname === link.path ? "text-primary bg-primary/10 active" : "text-secondary"
                 }`}
               >
                 {link.name}
@@ -85,7 +86,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Button */}
             <button className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X className="size-6 text-primary" /> : <Menu className="size-6 text-primary" />}
+              {isOpen ? <X className="size-6 text-primary mobile-menu-icon" /> : <Menu className="size-6 text-primary mobile-menu-icon" />}
             </button>
           </div>
         </div>
