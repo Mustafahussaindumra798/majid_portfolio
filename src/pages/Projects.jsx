@@ -9,39 +9,66 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Text Tools API Pro",
-      category: "APIs",
-      description: "A high-performance text manipulation engine with regex support, cleaning, and multilingual analysis.",
-      tech: ["FastAPI", "Python", "Regex", "Docker"],
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD96a1KzfPaICVQTpOZuCEItXotLzq69Yz_9-cPQoNPiTys13OCy4tOQmTzr6Y8VoUSCniILqwc0CEHYuSsBukpSl8_EMuycM9x8Ko4FxbACxqDIzwQRPAwPzsEcTd6HsjuRmUOMmJMH8Ft8PQePuMt9HwCHIim7e6rg3LIHbOwdBWQWDGpa3Wb_5fHg2FLkXbNnLdNIswNgwDEtSVhJ6_eMmnWzl4oWbhH7IToqgqgugYD1rK5Ub5typr-OeAkuRuLgXKOzLj3YI0",
-      live: "#",
-      github: "#"
-    },
-    {
-      title: "Background Remover AI",
-      category: "AI",
-      description: "Cloud-based AI tool that uses neural networks to intelligently isolate subjects from images.",
-      tech: ["PyTorch", "Flask", "React", "Cloudinary"],
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtjapL7u66zSSQLtFuKMV-HqBg9vq6X55xTYgyHZPh_G55qFq3EQfSQ6jdy10L-mziC_oDD7oB1LYxDAO6pbIgUFAD_zd4is-_4pM-4bNhkNP3Hp25d74qWFre2kJdS-h8aGA5AbGb9VOyDHIPH21T4_ouBcANgkTMUlSBh4DrjXUsaliJ8GwUcci7Or_reZpy5ZdD0gsDVJOFBetNF0iVJhF9ZD-9xGpY0pmDO7nR1D6tmPw2oIiz5QF6-BrqQTFTBwlhusFIRR0",
-      live: "#",
-      github: "#"
-    },
-    {
-      title: "E-Commerce OS",
+      title: "Taskflow",
       category: "Web",
-      description: "A complete operating system for modern retail, including inventory, checkout, and real-time analytics.",
-      tech: ["Next.js", "Tailwind", "PostgreSQL", "Stripe"],
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD96a1KzfPaICVQTpOZuCEItXotLzq69Yz_9-cPQoNPiTys13OCy4tOQmTzr6Y8VoUSCniILqwc0CEHYuSsBukpSl8_EMuycM9x8Ko4FxbACxqDIzwQRPAwPzsEcTd6HsjuRmUOMmJMH8Ft8PQePuMt9HwCHIim7e6rg3LIHbOwdBWQWDGpa3Wb_5fHg2FLkXbNnLdNIswNgwDEtSVhJ6_eMmnWzl4oWbhH7IToqgqgugYD1rK5Ub5typr-OeAkuRuLgXKOzLj3YI0",
-      live: "#",
+      description: "Taskflow is a modern task management dashboard with list, board, and calendar views for productivity tracking.",
+      tech: ["Next.js", "Tailwind CSS", "CSS"],
+      image: "https://s.wordpress.com/mshots/v1/https://todo-eta-six-26.vercel.app?w=1200",
+      live: "https://todo-eta-six-26.vercel.app/",
       github: "#"
     },
     {
-      title: "Neural Translator",
+      title: "Sarwaan Digital",
+      category: "Web",
+      description: "Admissions landing page for Sarwaan Digital with course highlights, campus details, and strong CTA placement.",
+      tech: ["Next.js", "Tailwind CSS", "CSS"],
+      image: "https://s.wordpress.com/mshots/v1/https://sarwaan.vercel.app?w=1200",
+      live: "https://sarwaan.vercel.app/",
+      github: "#"
+    },
+    {
+      title: "Cyanide VPN",
+      category: "Web",
+      description: "A sleek VPN dashboard showcasing connection status, country selection, and upload/download metrics.",
+      tech: ["Next.js", "Tailwind CSS", "CSS"],
+      image: "https://s.wordpress.com/mshots/v1/https://cyanidevpn.vercel.app?w=1200",
+      live: "https://cyanidevpn.vercel.app/",
+      github: "#"
+    },
+    {
+      title: "Makeup Studio",
+      category: "Web",
+      description: "A beauty studio homepage with elegant pink branding, booking actions, and featured review statistics.",
+      tech: ["Next.js", "Tailwind CSS", "CSS"],
+      image: "https://s.wordpress.com/mshots/v1/https://ayanoormakeupstudio.vercel.app?w=1200",
+      live: "https://ayanoormakeupstudio.vercel.app/",
+      github: "#"
+    },
+    {
+      title: "Royal Fitness",
+      category: "Web",
+      description: "A premium gym landing page presenting services, trainer info, and join-now membership callouts.",
+      tech: ["Next.js", "Tailwind CSS", "CSS"],
+      image: "https://s.wordpress.com/mshots/v1/https://royalfitnesgym.vercel.app?w=1200",
+      live: "https://royalfitnesgym.vercel.app/",
+      github: "#"
+    },
+    {
+      title: "Text Tools",
+      category: "Web",
+      description: "A modern text utilities interface for uppercase/lowercase conversion, word count, and text cleanup.",
+      tech: ["Next.js", "Tailwind CSS", "CSS"],
+      image: "https://s.wordpress.com/mshots/v1/https://text-frontend-lyart.vercel.app?w=1200",
+      live: "https://text-frontend-lyart.vercel.app/",
+      github: "#"
+    },
+    {
+      title: "ClearCut",
       category: "AI",
-      description: "Real-time voice and text translation service leveraging advanced transformer models.",
-      tech: ["Transformer", "Node.js", "LangChain"],
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtjapL7u66zSSQLtFuKMV-HqBg9vq6X55xTYgyHZPh_G55qFq3EQfSQ6jdy10L-mziC_oDD7oB1LYxDAO6pbIgUFAD_zd4is-_4pM-4bNhkNP3Hp25d74qWFre2kJdS-h8aGA5AbGb9VOyDHIPH21T4_ouBcANgkTMUlSBh4DrjXUsaliJ8GwUcci7Or_reZpy5ZdD0gsDVJOFBetNF0iVJhF9ZD-9xGpY0pmDO7nR1D6tmPw2oIiz5QF6-BrqQTFTBwlhusFIRR0",
-      live: "#",
+      description: "AI-powered image background remover with drag-and-drop upload and instant transparent output.",
+      tech: ["Python", "Tailwind CSS", "CSS"],
+      image: "https://s.wordpress.com/mshots/v1/https://bg-remover-frontend-ochre.vercel.app?w=1200",
+      live: "https://bg-remover-frontend-ochre.vercel.app/",
       github: "#"
     }
   ];
@@ -113,6 +140,11 @@ const Projects = () => {
                       {t}
                     </span>
                   ))}
+                </div>
+                <div className="mt-8">
+                  <a href={p.live} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-2xl text-sm font-black transition hover:bg-primary/90">
+                    View Project
+                  </a>
                 </div>
               </div>
             </motion.div>
